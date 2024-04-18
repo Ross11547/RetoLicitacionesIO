@@ -1,21 +1,21 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Diez = () => {
+const Nueve = () => {
     return (
         <ContainerForm>
             <Form>
                 <Titulo>
-                    <label>FORMULARIO V-1b</label>
+                    <label>FORMULARIO V-1a</label>
                     <label>EVALUACIÓN PRELIMINAR</label>
-                    <label>(Para Asociaciones Accidentales)</label>
+                    <label>(Para Personas Naturales y Empresas)</label>
                 </Titulo>
                 <Titulo2>
                     <label>DATOS GENERALES DEL PROCESO</label>
                 </Titulo2>
                 <FormGroup>
                     <Cuce>
-                        <div  className="form-group">
+                        <div className="form-group">
                             <label>CUCE:</label>
                             <label>Objeto de la contratación:</label>
                             <label>Nombre del Proponente:</label>
@@ -61,22 +61,14 @@ const Diez = () => {
 
                         </tr>
                         <tr>
-                            <Th>2. FORMULARIO A-2c. Identificación del Proponente, según corresponda.</Th>
+                            <Th>2. FORMULARIO A-2a o A-2b. Identificación del Proponente, según corresponda.</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                         </tr>
                         <tr>
-                            <Th>3. Además, cada socio en forma independiente presentará:
-                                FORMULARIO A-2d Identificación de Integrantes de la Asociación Accidental.</Th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                        </tr>
-                        <tr>
-                            <Th>4. Garantía de Seriedad de Propuesta o Depósito.</Th>
+                            <Th>3. Garantía de Seriedad de Propuesta, cuando corresponda o Depósito.</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
@@ -87,7 +79,7 @@ const Diez = () => {
                             <th colSpan={4}></th>
                         </Tr>
                         <tr>
-                            <Th>5. FORMULARIO C-1.
+                            <Th>4.FORMULARIO C-1.
                                 Señalar (Por ej.: Organigrama, Métodos Constructivos, Número de frentes a utilizar, otros).</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
@@ -95,7 +87,8 @@ const Diez = () => {
                             <th><input type="checkbox"></input></th>
                         </tr>
                         <tr>
-                            <Th>6. FORMULARIO C-2. Condiciones Adicionales (cuando corresponda)</Th>
+                            <Th>5. FORMULARIO C-2.
+                            Condiciones Adicionales (cuando corresponda).</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
@@ -106,14 +99,14 @@ const Diez = () => {
                             <th colSpan={4}></th>
                         </Tr>
                         <tr>
-                            <Th>7. FORMULARIO B-1. Presupuesto por Ítems y General de la Obra</Th>
+                            <Th>6. FORMULARIO B-1. Presupuesto por ítems y General de la Obra.</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                         </tr>
                         <tr>
-                            <Th>8. Otros (señalar).</Th>
+                            <Th>7. Otros (señalar)</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
@@ -126,7 +119,7 @@ const Diez = () => {
     )
 }
 
-export default Diez
+export default Nueve
 
 const ContainerForm = styled.div`
     width: 100%;

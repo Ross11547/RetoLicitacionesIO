@@ -13,128 +13,130 @@ const Uno = () => {
                 <Titulo2>
                     <label>1. DATOS DEL PROCESOS DE CONTRATACIÓN</label>
                 </Titulo2>
-                <FormGroup>
-                    <Cuce>
-                        <div className="form-group">
-                            <label>Entidad Convocante:</label>
-                            <label>Modalidad de contratación:</label>
-                            <div>
-                                    <label>Código Interno que la Entidad utiliza para identificar el proceso:</label>
-                                    <InputD type="text" placeholder="" />
-                                    <InputD type="text" placeholder="" />
-                            </div>
-                            <label>CUCE:</label>
-                            <label>Objeto de la contratación:</label>
-                            <label>Método de Selección y Adjudicación:</label>
-                            <div>
-                                <CheckboxContainer>
-                                    <input type="checkbox" placeholder="" />
-                                    <input type="checkbox" placeholder="" />
-                                </CheckboxContainer>
-                                <div>
-                                    <label>Precio Evaluado más Bajo</label>
-                                    <label>Calidad Propuesta Técnica y Costo</label>
-                                </div>
-                            </div>
-                            <label>Forma de Adjudicación:</label>
-                            <div>
-                                <div>
-                                    <input type="checkbox" placeholder="" />
-                                    <input type="checkbox" placeholder="" />
-                                    <input type="checkbox" placeholder="" />
-                                </div>
-                                <div>
-                                    <label>Por el Total</label>
-                                    <label>Por Tramos</label>
-                                    <label>Por Paquetes</label>
-                                </div>
-                            </div>
-                            <label>Precio Referencial:</label>
-                            <label>La contratación se formalizará mediante:</label>
-                            <label>Plazo de Ejecución de Obra (en días calendario):</label>
-                            <label>Garantía de Seriedad de Propuesta
-                                (Suprimir en caso de que no se requiera):</label>
-                            <label>Garantía de Cumplimiento
-                                de Contrato:</label>
-                            <label>Garantía Adicional a la de Cumplimiento de Contrato:</label>
-                            <label>Señalar con que presupuesto se inicia el proceso de contratación:</label>
-                            <div>
-                                <div>
-                                    <input type="checkbox" placeholder="" />
-                                    <input type="checkbox" placeholder="" />
-                                </div>
-                                <div>
-                                    <label>Presupuesto de la gestión en curso</label>
-                                    <label>Presupuesto de la próxima gestión (el proceso se  iniciará una vez publicada la Ley del Presupuesto General del Estado de la siguiente gestión)</label>
-                                </div>
-                            </div>
-                            <label>Organismos Financiadores:</label>
-                            <div>
-                                <div>
-                                    <label>Nombre del Organismo Financiador
-                                        (de acuerdo al clasificador vigente)</label>
-                                    <label>% de Financiamiento</label>
-                                </div>
-                                <div>
-                                    <InputD type="text" placeholder="" />
-                                    <InputD type="text" placeholder="" />
-                                    <InputD type="number" placeholder="" />
-                                    <InputD type="number" placeholder="" />
-                                </div>
-                            </div>
-                            <label>Objeto de la contratación:</label>
-                            <label>Nombre del Proponente:</label>
-                            <label>Propuesta Económica:</label>
-                        </div>
-                        <div>
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                            <InputD type="text" placeholder="" />
-                        </div>
-                    </Cuce>
-                </FormGroup>
+                <Table>
+                    <tbody>
+                        <tr>
+                            <th colSpan={2}>Entidad Convocante</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Modalidad de contratación</th>
+                            <th ><input type="text"></input></th>
+                            <th colSpan={2}>Código Interno que la Entidad utiliza para identificar el proceso</th>
+                            <th colSpan={2}><input type="number"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>CUCE</th>
+                            <th colSpan={2}><input type="number"></input></th>
+                            <th colSpan={2}>Gestión</th>
+                            <th ><input type="number"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Objeto de la contratación</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <th rowSpan={2} colSpan={2}>Método de Selección y Adjudicación</th>
+                        <tr>
+                            <th ><input type="checkbox"></input></th>
+                            <th >Precio Evaluado más Bajo</th>
+                            <th ><input type="checkbox"></input></th>
+                            <th colSpan={3}>Calidad Propuesta Técnica y Costo</th>
+                        </tr>
+                        <th rowSpan={3} colSpan={2}>Forma de Adjudicación</th>
+                        <tr>
+                            <th >Por Total</th>
+                            <th >Por Tramos</th>
+                            <th colSpan={3}>Por Paquetes</th>
+                        </tr>
+                        <tr>
+                            <th ><input type="checkbox"></input></th>
+                            <th ><input type="checkbox"></input></th>
+                            <th colSpan={3}><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Precio Referencia</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>La contratación se formalizará mediante</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Plazo de Ejecución de Obra (en días calendario)</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Garantía de Seriedad de Propuesta (Suprimir en caso de que no se requiera)</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Garantía de Cumplimiento de Contrato</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>Garantía Adicional a la de Cumplimiento de Contrato</th>
+                            <th colSpan={5}><input type="text"></input></th>
+                        </tr>
+                        <th rowSpan={3} colSpan={2}>Señalar con que presupuesto se inicia el proceso de contratación</th>
+                        <tr>
+                            <th ><input type="checkbox"></input></th>
+                            <th colSpan={4}>Presupuesto de la gestión en curso</th>
+                        </tr>
+                        <tr>
+                            <th ><input type="checkbox"></input></th>
+                            <th colSpan={4}>Presupuesto de la próxima gestión (el proceso se  iniciará una vez publicada la Ley del Presupuesto General del Estado de la siguiente gestión)</th>
+                        </tr>
+                        <th rowSpan={4} colSpan={2}>Organismos Financiadores</th>
+                        <tr>
+                            <th >#</th>
+                            <th colSpan={3}>Nombre del Organismo Financiador (de acuerdo al clasificador vigente)</th>
+                            <th >% de Financiamiento</th>
+                        </tr>
+                        <tr>
+                            <th ></th>
+                            <th colSpan={3}><input type="text"></input></th>
+                            <th ><input type="number"></input></th>
+                        </tr>
+                        <tr>
+                            <th ></th>
+                            <th colSpan={3}><input type="text"></input></th>
+                            <th ><input type="number"></input></th>
+                        </tr>
+                    </tbody>
+                </Table>
                 <Titulo2>
                     <label>2.INFORMACIÓN DEL DOCUMENTO BASE DE CONTRATACIÓN (DBC)
                         Los interesados podrán recabar el Documento Base de Contratación (DBC) en el sitio Web del SICOES y obtener información de la entidad de acuerdo con los siguientes datos:</label>
                 </Titulo2>
-                <FormGroup>
-                    <Cuce>
-                        <div className="form-group">
-                            <label>Domicilio de la Entidad Convocante:<input type="text" placeholder="" /></label>
-                            <div>
-                                <label>Horario de Atención de la Entidad:<input type="time" placeholder=""></input><input type="time" placeholder=""></input></label>
-                            </div>
-                            <label>Encargado de atender consultas:</label>
-                            <div>
-                                <div>
-                                    <label>Nombre Completo:</label>
-                                    <label>Nombre Completo:</label>
-                                    <label>Nombre Completo:</label>
-                                </div>
-                                <div>
-                                    <input type="text" placeholder=""></input>
-                                    <input type="text" placeholder=""></input>
-                                    <input type="text" placeholder=""></input>
-                                </div>
-                            </div>
-                            <label>Teléfono:<input type="number" placeholder=""></input></label>
-                            <div>
-                                <label>Fax:<input type="text" placeholder=""></input></label>
-                                <label>Correo Electrónico:<input type="text" placeholder=""></input></label>
-                            </div>
-                            <label>Método de Selección y Adjudicación:</label>
-                        </div>
-                        <div>
-                            <InputD type="text" placeholder="" />
-                        </div>
-                    </Cuce>
-                </FormGroup>
+                <Table>
+                    <tbody>
+                        <tr>
+                            <Th colSpan={2}>Domicilio de la Entidad Convocante</Th>
+                            <th><input type="text"></input></th>
+                            <Th colSpan={2}>Horario de Atención de la Entidad</Th>
+                            <th><input type="time"></input></th>
+                        </tr>
+                        <Th rowSpan={3} colSpan={2}>Encargado de atender consultas</Th>
+                        <tr>
+                            <Th colSpan={2}>Nombre Completo</Th>
+                            <Th>Cargo</Th>
+                            <Th>Dependencia</Th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}><input type="text"></input></th>
+                            <th><input type="text"></input></th>
+                            <th><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>Teléfono</Th>
+                            <th><input type="number"></input></th>
+                            <Th>Fax</Th>
+                            <th><input type="number"></input></th>
+                            <Th>Correo Electrónico</Th>
+                            <th><input type="email"></input></th>
+                        </tr>
+                    </tbody>
+                </Table>
                 <Titulo2>
                     <label>3. CRONOGRAMA DE PLAZOS:</label>
                 </Titulo2>
@@ -152,11 +154,11 @@ const Uno = () => {
                         <label>El incumplimiento a los plazos señalados será considerado como inobservancia a la normativa</label>
                     </TextoTres>
                 </FormGroup>
+                <Titulo2>
+                    <label>EL CRONOGRAMA DE PLAZOS PREVISTO PARA EL PROCESO DE CONTRATACIÓN EN EL SIGUIENTE:</label>
+                </Titulo2>
                 <Table>
                     <thead>
-                        <tr>
-                            <th colSpan={5}>El cronograma de plazos previsto para el proceso de contratación, es el siguiente:</th>
-                        </tr>
                         <tr>
                             <th colSpan={2}>ACTIVIDAD</th>
                             <th>FECHA</th>
@@ -194,11 +196,14 @@ const Uno = () => {
                             <th><input type="text"></input></th>
                         </tr>
                         <tr>
-                            <th>5</th>
-                            <Th>Fecha límite de Presentación y Apertura de Propuestas</Th>
-                            <th><input type="date"></input></th>
-                            <th><input type="time"></input><input type="time"></input></th>
-                            <th><input type="text"></input></th>
+                            <th rowSpan={2}>5</th>
+                            <Th rowSpan={2}>Fecha límite de Presentación y Apertura de Propuestas</Th>
+                            <th rowSpan={2}><input type="date"></input></th>
+                            <th><input type="time"></input></th>
+                            <th rowSpan={2}><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th><input type="time"></input></th>
                         </tr>
                         <tr>
                             <th>6</th>
@@ -237,6 +242,9 @@ const Uno = () => {
                         </tr>
                     </tbody>
                 </Table>
+                <Titulo2>
+                    <label></label>
+                </Titulo2>
             </Form>
         </ContainerForm>
     )
@@ -274,7 +282,7 @@ const Titulo = styled.div`
 const Titulo2 = styled.div`
     width: 100%;
     height: 50px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: start;
     padding: 15px;
@@ -295,7 +303,7 @@ const Form = styled.form`
 `;
 
 const FormGroup = styled.div`
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     background: #C1CAD6;
     border-radius: 4px solid #003366;
     padding: 10px;
@@ -373,6 +381,7 @@ const FechaDireccion = styled.div`
 const Table = styled.table`
     width: 100%;
     border-collapse: collapse;
+    margin-block-end: 12px;
 
     th, tr {
         border: 1px solid #336699;

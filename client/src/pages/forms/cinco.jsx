@@ -10,12 +10,10 @@ const Cinco = () => {
                     <label>IDENTIFICACIÓN DEL PROPONENTE</label>
                     <label>(Para Asociaciones Accidentales)</label>
                 </Titulo>
+                <Titulo2>
+                    <label>1. DATOS GENERALES DE LA ASOCIACIÓN ACCIDENTAL</label>
+                </Titulo2>
                 <Table3>
-                    <thead>
-                        <tr>
-                            <Th colSpan={4}>1. DATOS GENERALES DE LA ASOCIACIÓN ACCIDENTAL</Th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
                             <Th>Denominación de la Asociación Accidental</Th>
@@ -50,11 +48,11 @@ const Cinco = () => {
                             <th><input type="date"></input></th>
                         </tr>
                     </tbody>
-                    <thead>
-                        <tr>
-                            <Th colSpan={4}>2. DATOS DE CONTACTO DE LA EMPRESA LÍDER</Th>
-                        </tr>
-                    </thead>
+                </Table3>
+                <Titulo2>
+                    <label>1. DATOS GENERALES DE LA ASOCIACIÓN ACCIDENTAL</label>
+                </Titulo2>
+                <Table3>
                     <tbody>
                         <tr>
                             <Th>País:</Th>
@@ -77,11 +75,11 @@ const Cinco = () => {
                             <th colSpan={3}><input type="text"></input></th>
                         </tr>
                     </tbody>
-                    <thead>
-                        <tr>
-                            <Th colSpan={4}>3. INFORMACIÓN DEL REPRESENTANTE LEGAL DE LA ASOCIACIÓN ACCIDENTAL</Th>
-                        </tr>
-                    </thead>
+                </Table3>
+                <Titulo2>
+                    <label>1. DATOS GENERALES DE LA ASOCIACIÓN ACCIDENTAL</label>
+                </Titulo2>
+                <Table3>
                     <tbody>
                         <Th rowSpan={3}>Nombre del Representante Legal</Th>
                         <tr>
@@ -116,20 +114,20 @@ const Cinco = () => {
                             <th><input type="date"></input></th>
                         </tr>
                         <tr>
-                            <Th colSpan={3}>Dirección del Representante Legal</Th>
-                            <th><input type="text"></input></th>
+                            <Th>Dirección del Representante Legal</Th>
+                            <th colSpan={3}><input type="text"></input></th>
                         </tr>
                         <tr>
                             <Th>Correo Electrónico</Th>
-                            <th><input type="email"></input></th>
+                            <th colSpan={3}><input type="email"></input></th>
                         </tr>
-                        <Th>Declaro en calidad de Representante Legal de la Asociación Accidental contar con un poder general amplio y suficiente con facultades para presentar propuestas y suscribir Contratos.</Th>
+                        <Th colSpan={4}>Declaro en calidad de Representante Legal de la Asociación Accidental contar con un poder general amplio y suficiente con facultades para presentar propuestas y suscribir Contratos.</Th>
                     </tbody>
-                    <thead>
-                        <tr>
-                            <Th colSpan={5}>4. INFORMACIÓN SOBRE NOTIFICACIONES</Th>
-                        </tr>
-                    </thead>
+                </Table3>
+                <Titulo2>
+                    <label>1. DATOS GENERALES DE LA ASOCIACIÓN ACCIDENTAL</label>
+                </Titulo2>
+                <Table3>
                     <tbody>
                         <Th rowSpan={3}>Solicito que las notificaciones/comunicaciones me sean remitidas vía</Th>
                         <tr>
@@ -140,11 +138,11 @@ const Cinco = () => {
                             <Th>Correo Electrónico</Th>
                             <th><input type="text"></input></th>
                         </tr>
-                        <Tr>
-                            <th colSpan={5}></th>
-                        </Tr>
                     </tbody>
                 </Table3>
+                <Titulo2>
+                    <label></label>
+                </Titulo2>
             </Form>
         </ContainerForm>
     )
@@ -243,7 +241,7 @@ const Cuce = styled.div`
 const Table3 = styled.table`
     width: 100%;
     border-collapse: collapse;
-
+    margin-block-end: 12px;
     th, tr {
         border: 1px solid #336699;
         padding: 8px;

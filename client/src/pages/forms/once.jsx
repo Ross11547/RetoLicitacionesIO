@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Evalucion_propuesta = () => {
+const Once = () => {
     return (
         <ContainerForm>
             <Form>
@@ -155,7 +155,7 @@ const Evalucion_propuesta = () => {
     );
 };
 
-export default Evalucion_propuesta;
+export default Once;
 
 const ContainerForm = styled.div`
     width: 100%;
@@ -164,7 +164,7 @@ const ContainerForm = styled.div`
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    background: #C1CAD6;
+    background: #ffffff;
 `;
 
 const Titulo = styled.div`
@@ -187,7 +187,7 @@ const Titulo = styled.div`
 const Titulo2 = styled.div`
     width: 100%;
     height: 50px;
-    margin-bottom: 2px;
+    margin-bottom: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,8 +207,8 @@ const Form = styled.form`
 `;
 
 const FormGroup = styled.div`
-    margin-bottom: 20px;
-    background: #336699;
+    margin-bottom: 12px;
+    background: #C1CAD6;
     padding: 10px;
     border-radius: 5px;
 `;
@@ -233,7 +233,7 @@ const InputD = styled.input`
     margin-left: 10px;
     padding: 2px;
     border-radius: 3px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     outline: none;
 `;
 
@@ -296,7 +296,7 @@ const Table = styled.table`
         }
     }
     input{
-        background: #C1CAD6;
+        background: #ffffff;
         border: none;
         outline: none;
     }

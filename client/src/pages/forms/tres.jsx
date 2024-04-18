@@ -32,21 +32,27 @@ const Tres = () => {
                 <Titulo2>
                     <label>2. INFORMACIÓN SOBRE NOTIFICACIONES/COMUNICACIONES</label>
                 </Titulo2>
-                <FormGroup>
-                    <Cuce>
-                        <div className="form-group">
-                            <label>Cédula de Identidad o Número de Identificación Tributaria</label>
-                        </div>
-                        <div>                            
-                            <label>Fax:</label>
-                            <label>Correo Electrónico:</label>
-                        </div>
-                        <div>
-                            <InputD type="text" placeholder='solo si tiene' />
-                            <InputD type="email" placeholder='correo electrónico' />
-                        </div>
-                    </Cuce>
-                </FormGroup>
+                <Table>
+                    <tbody>
+                        <Th rowSpan={4}>Solicito la aplicación del siguiente margen de preferencia para el proceso de contratación, conforme lo establecido en el inciso a) del parágrafo II, del Artículo 30 de las NB-SABS
+                            (El proponente solo deberá marcar una de las opciones, el no marcado de la casilla se entenderá como la no solicitud de ningún  margen de preferencia)</Th>
+                        <tr>
+                            <th><input type="checkbox"></input></th>
+                            <Th>Para empresas constructoras unipersonales bolivianas.</Th>
+                        </tr>
+                        <tr>
+                            <th><input type="checkbox"></input></th>
+                            <Th>Para empresas constructoras, donde la participación en aportes de los socios bolivianos sea igual o mayor al cincuenta y uno por ciento (51%)</Th>
+                        </tr>
+                        <tr>
+                            <th><input type="checkbox"></input></th>
+                            <Th>Para asociaciones accidentales de empresas constructoras, donde los asociados bolivianos tengan una participación en aportes comunes en la Asociación Accidental igual o mayor al cincuenta y uno por ciento (51%).</Th>
+                        </tr>
+                        <Tr>
+                            <th colSpan={4}></th>
+                        </Tr>
+                    </tbody>
+                </Table>
             </Form>
         </ContainerForm>
     )
@@ -61,7 +67,7 @@ const ContainerForm = styled.div`
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    background: #C1CAD6;
+    background: #ffffff;
 `;
 
 const Titulo = styled.div`
@@ -110,6 +116,8 @@ const FormGroup = styled.div`
     padding: 10px;
     border-radius: 5px solid #003366;
     text-align: end;
+    background: #C1CAD6;
+
 `;
 
 const InputD = styled.input`
@@ -130,7 +138,7 @@ const Cuce = styled.div`
     justify-content: center;
     margin: 16px 0;
     gap: 15px;
-    border: 2px solid #003366;
+    background: #C1CAD6;
     div{
         display: flex;
         flex-direction: column;

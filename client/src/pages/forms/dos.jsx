@@ -27,12 +27,10 @@ const Dos = () => {
                         </div>
                     </Cuce>
                 </FormGroup>
+                <Titulo2>
+                    <label>2. MÁRGENES DE PREFERENCIA</label>
+                </Titulo2>
                 <Table>
-                    <thead>
-                        <tr>
-                            <Th colSpan={3}>2. MÁRGENES DE PREFERENCIA</Th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <Th rowSpan={4}>Solicito la aplicación del siguiente margen de preferencia para el proceso de contratación, conforme lo establecido en el inciso a) del parágrafo II, del Artículo 30 de las NB-SABS
                             (El proponente solo deberá marcar una de las opciones, el no marcado de la casilla se entenderá como la no solicitud de ningún  margen de preferencia)</Th>
@@ -48,11 +46,11 @@ const Dos = () => {
                             <th><input type="checkbox"></input></th>
                             <Th>Para asociaciones accidentales de empresas constructoras, donde los asociados bolivianos tengan una participación en aportes comunes en la Asociación Accidental igual o mayor al cincuenta y uno por ciento (51%).</Th>
                         </tr>
-                        <Tr>
-                            <th colSpan={4}></th>
-                        </Tr>
                     </tbody>
                 </Table>
+                <Titulo2>
+                    <label></label>
+                </Titulo2>
             </Form>
         </ContainerForm>
     )
@@ -67,7 +65,7 @@ const ContainerForm = styled.div`
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    background: #C1CAD6;
+    background: #ffffff;
 `;
 
 const Titulo = styled.div`
@@ -92,12 +90,13 @@ const Titulo2 = styled.div`
     height: 50px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 17px;
     font-weight: bold;
     background: #003366;
     border-radius: 5px;
+    padding: 15px;
+
     label{
         color: #FFFFFF;
     }
@@ -116,6 +115,8 @@ const FormGroup = styled.div`
     padding: 10px;
     border-radius: 5px solid #003366;
     text-align: end;
+    background: #C1CAD6;
+
 `;
 
 const InputD = styled.input`
@@ -150,6 +151,7 @@ const Cuce = styled.div`
 const Table = styled.table`
     width: 100%;
     border-collapse: collapse;
+    margin-block-end: 12px;
 
     th, tr {
         border: 1px solid #336699;

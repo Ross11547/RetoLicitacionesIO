@@ -1,124 +1,156 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Diez = () => {
+const Doce = () => {
     return (
         <ContainerForm>
             <Form>
                 <Titulo>
-                    <label>FORMULARIO V-1b</label>
-                    <label>EVALUACIÓN PRELIMINAR</label>
-                    <label>(Para Asociaciones Accidentales)</label>
+                    <label>FORMULARIO V-3</label>
+                    <label>EVALUACIÓN DE LA PROPUESTA TÉCNICA</label>
                 </Titulo>
-                <Titulo2>
-                    <label>DATOS GENERALES DEL PROCESO</label>
-                </Titulo2>
-                <FormGroup>
-                    <Cuce>
-                        <div  className="form-group">
-                            <label>CUCE:</label>
-                            <label>Objeto de la contratación:</label>
-                            <label>Nombre del Proponente:</label>
-                            <label>Propuesta Económica:</label>
-                        </div>
-                        <div>
-                            <InputD type="number" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="text" placeholder />
-
-                        </div>
-                    </Cuce>
-                </FormGroup>
                 <Table>
                     <thead>
                         <tr>
-                            <th rowSpan={3}>REQUISITOS EVALUADOS</th>
-                            <th colSpan={2}> Verificación (Acto de Apertura)</th>
-                            <th rowSpan={2} colSpan={2}>Evaluación Preliminar (Sesión Reservada)</th>
+                            <Th rowSpan={3}>PROPUESTA TÉCNICA EN BASE A LAS ESPECIFICACIONES TÉCNICAS
+                                (Señalar los Documentos Técnicos a evaluarse pudiendo ser entre otros: Métodos constructivos, Organigrama, número de frentes de trabajo y otros que se consideren necesarios).</Th>
+                            <th colSpan={8}> PROPONENTES</th>
                         </tr>
                         <tr>
-                            <th colSpan={2}>PRESENTÓ</th>
+                            <th colSpan={2}>PROPONENTE A</th>
+                            <th colSpan={2}>PROPONENTE B</th>
+                            <th colSpan={2}>PROPONENTE C</th>
+                            <th colSpan={2}>PROPONENTE n</th>
                         </tr>
                         <tr>
-                            <th>SI</th>
-                            <th>NO</th>
-                            <th>CONTINUA</th>
-                            <th>DESCALIFICADA</th>
-                        </tr>
-                        <tr>
-                            <th colSpan={1}>DOCUMENTOS LEGALES Y ADMINISTRATIVOS</th>
-                            <th colSpan={4}></th>
+                            <th>CUMPLE</th>
+                            <th>NO CUMPLE</th>
+                            <th>CUMPLE</th>
+                            <th>NO CUMPLE</th>
+                            <th>CUMPLE</th>
+                            <th>NO CUMPLE</th>
+                            <th>CUMPLE</th>
+                            <th>NO CUMPLE</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <Th>1. FORMULARIO A-1 Presentación de Propuesta.</Th>
+                            <Th>1. <input type="text"></input></Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
-
-                        </tr>
-                        <tr>
-                            <Th>2. FORMULARIO A-2c. Identificación del Proponente, según corresponda.</Th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                        </tr>
-                        <tr>
-                            <Th>3. Además, cada socio en forma independiente presentará:
-                                FORMULARIO A-2d Identificación de Integrantes de la Asociación Accidental.</Th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                         </tr>
                         <tr>
-                            <Th>4. Garantía de Seriedad de Propuesta o Depósito.</Th>
+                            <Th>2. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>3. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>4. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>5. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>6. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>7. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>8. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>9. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                        </tr>
+                        <tr>
+                            <Th>10. <input type="text"></input></Th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
+                            <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                             <th><input type="checkbox"></input></th>
                         </tr>
                         <Tr>
-                            <th colSpan={1}>PROPUESTA TÉCNICA</th>
-                            <th colSpan={4}></th>
+                            <th>METODOLOGÍA CUMPLE/NO CUMPLE</th>
+                            <th colSpan={2}>(señalar si cumple o no cumple)</th>
+                            <th colSpan={2}>(señalar si cumple o no cumple)</th>
+                            <th colSpan={2}>(señalar si cumple o no cumple)</th>
+                            <th colSpan={2}>(señalar si cumple o no cumple)</th>
                         </Tr>
-                        <tr>
-                            <Th>5. FORMULARIO C-1.
-                                Señalar (Por ej.: Organigrama, Métodos Constructivos, Número de frentes a utilizar, otros).</Th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                        </tr>
-                        <tr>
-                            <Th>6. FORMULARIO C-2. Condiciones Adicionales (cuando corresponda)</Th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                        </tr>
-                        <Tr>
-                            <th colSpan={1}>PROPUESTA ECONÓMICA</th>
-                            <th colSpan={4}></th>
-                        </Tr>
-                        <tr>
-                            <Th>7. FORMULARIO B-1. Presupuesto por Ítems y General de la Obra</Th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                        </tr>
-                        <tr>
-                            <Th>8. Otros (señalar).</Th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                            <th><input type="checkbox"></input></th>
-                        </tr>
                     </tbody>
                 </Table>
             </Form>
@@ -126,7 +158,7 @@ const Diez = () => {
     )
 }
 
-export default Diez
+export default Doce
 
 const ContainerForm = styled.div`
     width: 100%;
@@ -268,10 +300,10 @@ const Table = styled.table`
         }
     }
     input{
-        background: #C1CAD6;
+        background: #ffffff;
         border: none;
         outline: none;
-        text-align:center;
+        width: 90%;
     }
 `;
 const Tr = styled.tr`

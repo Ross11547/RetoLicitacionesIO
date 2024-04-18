@@ -13,68 +13,92 @@ const Cuatro = () => {
                 <Titulo2>
                     <label>1. DATOS GENERALES DEL PROPONENTE</label>
                 </Titulo2>
-                <FormGroup>
-                    <Cuce>
-                        <div className="form-group">
-                            <label>Nombre del proponente o Razón social:</label>
-                            <label>Proponente:</label>
-                            <div>
-                                <label><InputD type="checkbox" placeholder /> Empresa Nacional</label>
-                                <label><InputD type="checkbox" placeholder />Asociación sin fines de lucro</label>
-                            </div>
-                            <label>Domicilio Principal:</label>
-                            <div>
-                                <InputD type="text" placeholder='País' />
-                                <InputD type="text" placeholder='Ciudad' />
-                                <InputD type="text" placeholder='Dirección' />
-                            </div>
-                            <label>Teléfonos :</label>
-                            <labe>Númereo de Identificación Tributaria <InputD type="text" placeholder /></labe>
-                            <label>Matrícula de Convenio <InputD type="text" placeholder='Número de Matrícula' /></label>
-                            <label>Fecha de Registro <InputD type="date" placeholder /></label>
-                        </div>
-                        <div>
-                            <InputD type="text" placeholder />
-                        </div>
-                    </Cuce>
-                </FormGroup>
+                <Table3>
+                    <tbody>
+                        <tr>
+                            <th >Nombre del proponente o Razón Social</th>
+                            <th colSpan={4}><input type="text"></input></th>
+                        </tr>
+                        <th rowSpan={2}>Proponente</th>
+                        <tr>
+                            <th ><input type="checkbox"></input></th>
+                            <th>Empresa Nacional</th>
+                            <th ><input type="checkbox"></input></th>
+                            <th>Asociación sin fines de lucro</th>
+                        </tr>
+                        <th rowSpan={3} colSpan={2}>Domicilio Principal</th>
+                        <tr>
+                            <th>País</th>
+                            <th>Ciudad</th>
+                            <th>Dirección</th>
+                        </tr>
+                        <tr>
+                            <th><input type="text"></input></th>
+                            <th><input type="text"></input></th>
+                            <th ><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th >Teléfono</th>
+                            <th ><input type="number"></input></th>
+                            <th colSpan={2}>Número de Identificación Tributaria</th>
+                            <th ><input type="number"></input></th>
+                        </tr>
+                        <th rowSpan={3} colSpan={2}>Matrícula de Comercio</th>
+                        <tr>
+                            <th colSpan={2}>Número de Matricula</th>
+                            <th>Fecha de Registro</th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}><input type="number"></input></th>
+                            <th><input type="date"></input></th>
+                        </tr>
+                    </tbody>
+                </Table3>
                 <Titulo2>
                     <label>2. INFORMACIÓN DEL REPRESENTANTE LEGAL (Cuando el proponente sea una empresa unipersonal y éste no acredite a un Representante Legal no será necesario el llenado de la información del numeral 2 del presente formulario).</label>
                 </Titulo2>
-                <FormGroup>
-                    <Cuce2>
-                        <div className="form-group">
-                            <label>Nombre del Representante Legal</label>
-                            <div>
-                                <InputD type="text" placeholder='Apellido Paterno' />
-                                <InputD type="text" placeholder='Apellido Materno' />
-                                <InputD type="text" placeholder='Nombre(s)' />
-                            </div>
-                            <label>Número de Cédula de Identidad del Representante Legal</label>
-                            <div>
-                                <InputD type="text" placeholder />
-                            </div>
-                            <label>Poder del Representante Legal</label>
-                            <div>
-                                <InputD type="text" placeholder='Número de Testimonio' />
-                                <InputD type="text" placeholder='Lugar de Emisión' />
-                                <InputD type="date" placeholder='Fecha de Inscripción' />
-                            </div>
-                        </div>
-                        <div>
-                            <InputD type="text" placeholder='Nombre(s)' />
-                        </div>
-                    </Cuce2>
-                </FormGroup>
-                <Table>
-                    <thead>
-                        <tr>
-                            <Th colSpan={3}>3. INFORMACIÓN SOBRE NOTIFICACIONES</Th>
-                        </tr>
-                    </thead>
+                <Table3>
                     <tbody>
-                        <Th rowSpan={3}>Solicito la aplicación del siguiente margen de preferencia para el proceso de contratación, conforme lo establecido en el inciso a) del parágrafo II, del Artículo 30 de las NB-SABS
-                            (El proponente solo deberá marcar una de las opciones, el no marcado de la casilla se entenderá como la no solicitud de ningún  margen de preferencia)</Th>
+                        <th rowSpan={3} colSpan={2}>Domicilio Principal</th>
+                        <tr>
+                            <th>País</th>
+                            <th>Ciudad</th>
+                            <th>Dirección</th>
+                        </tr>
+                        <tr>
+                            <th><input type="number"></input></th>
+                            <th><input type="text"></input></th>
+                            <th ><input type="text"></input></th>
+                        </tr>
+                        <tr>
+                            <th >Nombre del proponente o Razón Social</th>
+                            <th colSpan={4}><input type="text"></input></th>
+                        </tr>
+                        <th rowSpan={3} colSpan={2}>Poder del Representante Legal</th>
+                        <tr>
+                            <th>Número de Testimonio</th>
+                            <th>Lugar de Emisión</th>
+                            <th>Fecha de Inscripción</th>
+                        </tr>
+                        <tr>
+                            <th><input type="number"></input></th>
+                            <th><input type="text"></input></th>
+                            <th ><input type="date"></input></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={5}>{">"} Declaro en calidad de Representante Legal contar con un poder general amplio y suficiente con facultades para presentar propuestas y suscribir Contratos. </th>
+                        </tr>
+                        <tr>
+                            <th colSpan={5}>{">"} Declaro que el poder del Representante Legal se encuentra inscrito en el Registro de Comercio. (Suprimir este texto cuando por la naturaleza jurídica del proponente no se requiera la inscripción en el Registro de Comercio de Bolivia y cuando el proponente sea una empresa unipersonal y éste no acredite a un Representante Legal). </th>
+                        </tr>
+                    </tbody>
+                </Table3>
+                <Titulo2>
+                    <label>3. INFORMACIÓN SOBRE NOTIFICACIONES</label>
+                </Titulo2>
+                <Table3>
+                    <tbody>
+                        <Th rowSpan={3}>Solicito que las notificaciones/comunicaciones me sean remitidas vía</Th>
                         <tr>
                             <Th>Fax:</Th>
                             <th><input type="text"></input></th>
@@ -83,17 +107,17 @@ const Cuatro = () => {
                             <Th>Correo Electrónico</Th>
                             <th><input type="text"></input></th>
                         </tr>
-                        <Tr>
-                            <th colSpan={3}></th>
-                        </Tr>
                     </tbody>
-                </Table>
+                </Table3>
+                <Titulo2>
+                    <label></label>
+                </Titulo2>
             </Form>
         </ContainerForm>
     )
 }
 
-export default Cuatro;
+export default Cuatro
 
 const ContainerForm = styled.div`
     width: 100%;
@@ -102,12 +126,12 @@ const ContainerForm = styled.div`
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    background: #C1CAD6;
+    background: #ffffff;
 `;
 
 const Titulo = styled.div`
     width: 100%;  
-    height: 150px;
+    height: 140px;
     margin-bottom: 15px;
     background:#336699;
     display: flex;
@@ -124,10 +148,9 @@ const Titulo = styled.div`
 `;
 const Titulo2 = styled.div`
     width: 100%;
-    height: 60px;
+    height: 50px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 17px;
     font-weight: bold;
@@ -135,7 +158,7 @@ const Titulo2 = styled.div`
     border-radius: 5px;
     label{
         color: #FFFFFF;
-        margin-left: 10px;
+        margin-left: 15px;
     }
 `;
 const Form = styled.form`
@@ -165,7 +188,7 @@ const InputD = styled.input`
 
 const Cuce = styled.div`
     width: 100%;
-    height: 540px;
+    height: 550px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -184,55 +207,15 @@ const Cuce = styled.div`
     }
 `;
 
-const Cuce2 = styled.div`
-width: 100%;
-height: 410px;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin: 16px 0;
-gap: 15px;
-div{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.form-group{
-    display: flex;
-    flex-direction: column;
-    text-align: end;
-}
-`;
-
-const Cuce3 = styled.div`
-    width: 100%;
-    height: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 16px 0;
-    gap: 15px;
-    div{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .form-group{
-        display: flex;
-        flex-direction: column;
-        text-align: end;
-    }
-`;
-const Table = styled.table`
+const Table3 = styled.table`
     width: 100%;
     border-collapse: collapse;
-
+    margin-block-end: 12px;
     th, tr {
         border: 1px solid #336699;
         padding: 8px;
         height: 20px;
+        
         
     }
     thead{
@@ -246,10 +229,11 @@ const Table = styled.table`
         }
     }
     input{
-        background: #C1CAD6;
+        background: #ffffff;
         border: none;
         outline: none;
         text-align:center;
+        width: 90%;
     }
 `;
 const Tr = styled.tr`

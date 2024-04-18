@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Itemsobras = () => {
+const Siete = () => {
     return (
         <ContainerForm>
             <Form>
@@ -528,7 +528,7 @@ const Itemsobras = () => {
                             <th><input type="number"></input></th>
                         </tr>
                         <Tr>
-                            <Tht rowSpan={2} colSpan={4}></Tht>
+                            <th rowSpan={2} colSpan={4}></th>
                             <th colSpan={2}>PRECIO TOTAL (Numeral)</th>
                             <th><input type="number"></input></th>
                         </Tr>
@@ -543,7 +543,7 @@ const Itemsobras = () => {
     );
 }
 
-export default Itemsobras;
+export default Siete;
 
 const ContainerForm = styled.div`
     width: 100%;
@@ -552,7 +552,7 @@ const ContainerForm = styled.div`
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    background: #C1CAD6;
+    background: #ffffff;
 `;
 
 const Titulo = styled.div`
@@ -601,7 +601,7 @@ const Table = styled.table`
         }
     }
     input{
-        background: #C1CAD6;
+        background: #ffffff;
         border: none;
         outline: none;
     }
@@ -623,8 +623,4 @@ const Th = styled.th`
     padding: 8px;
     height: 30px;
     text-align: start;
-`;
-
-const Tht = styled.th`
-    background: #C1CAD6;
 `;
