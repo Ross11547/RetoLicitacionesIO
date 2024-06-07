@@ -1,83 +1,40 @@
 import React from 'react';
-import styled from 'styled-components';
+import { ButtonInicio, CheckboxContainer, CheckboxInput, CheckboxLabel, Container, DivImg, Form, FormGroup, Input, Label, LoginForm, LoginForm2, Title } from '../style/registros';
 
 const Register = () => {
   return (
     <Container>
-      <RegisterForm>
-        <Title>Registrarse</Title>
-        <FormGroup>
-          <label>Nombre</label>
-          <input type="text" placeholder="Nombre" required />
-        </FormGroup>
-        <FormGroup>
-          <label>Correo Electrónico</label>
-          <input type="email" placeholder="Correo electrónico" required />
-        </FormGroup>
-        <FormGroup>
-          <label>Contraseña</label>
-          <input type="password" placeholder="Contraseña" required />
-        </FormGroup>
-        <FormGroup>
-          <label>Celular</label>
-          <input type="tel" placeholder="Celular" required />
-        </FormGroup>
-        <SubmitButton type="submit">Registrarme</SubmitButton>
-      </RegisterForm>
+      <DivImg>
+        <img src='https://estaticos.elcolombiano.com/binrepository/848x565/34c0/780d565/none/11101/TMDW/40763190_40763190_20220927184804.jpg' alt="Imagen de fondo"></img>
+      </DivImg>
+      <Form>
+        <LoginForm2>
+          <Title>Registrarse</Title>
+          <FormGroup>
+            <Input type="text" id="username" placeholder="Nombre Empresa" required />
+          </FormGroup>
+          <FormGroup>
+            <Input type="number" id="nit" placeholder="NIT de la empresa" required />
+          </FormGroup>
+          <FormGroup>
+            <Input type="text" id="departamento" placeholder="Departamento" required />
+          </FormGroup>
+          <FormGroup>
+            <Input type="text" id="dedicada" placeholder="Empresa dedicada a..." required />
+          </FormGroup>
+          <FormGroup>
+            <Input type="email" id="correo" placeholder="Correo Electrónico" required />
+          </FormGroup>
+          <FormGroup>
+            <Input type="number" id="celular" placeholder="Celular" required />
+          </FormGroup>
+          <FormGroup>
+          </FormGroup>
+          <ButtonInicio type="submit">Iniciar sesión</ButtonInicio>
+        </LoginForm2>
+      </Form>
     </Container>
   );
 };
 
 export default Register;
-
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #C1CAD6;
-`;
-
-const RegisterForm = styled.form`
-  width: 300px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-`;
-
-const Title = styled.h2`
-  margin-bottom: 20px;
-  text-align: center;
-`;
-
-const FormGroup = styled.div`
-  margin-bottom: 15px;
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    outline: none;
-  }
-`;
-
-const SubmitButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #336699;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: #003366;
-  }
-`;

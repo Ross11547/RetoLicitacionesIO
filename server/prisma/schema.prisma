@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Empresa {
+  id                Int       @id @default(autoincrement())
+  nombres           String
+  nit               Int
+  departamento      String
+  descripcion       String
+  direccion         String
+  correoElectronico String
+  telefono          Int
+  Usuario           Usuario[]
+}
+
+model Usuario {
+  id        Int        @id @default(autoincrement())
+  idEmpresa Int
+  usuario   String
+  password  String
+  rol       String
+  empresa   Empresa?   @relation(fields: [idEmpresa], references: [id])
+  Proyecto  Proyecto[]
+}
+
+model Convocatoria {
+  id               Int        @id @default(autoincrement())
+  nombre           String
+  departamento     String
+  modalidad        String
+  fechaPublicacion DateTime
+  descripcion      String
+  Proyecto         Proyecto[]
+}
+
+model Formulario {
+  id          Int        @id @default(autoincrement())
+  descripcion String
+  archivo     Json
+  Proyecto    Proyecto[]
+}
+
+model Proyecto {
+  id                Int                 @id @default(autoincrement())
+  idUsuario         Int
+  idFormulario      Int
+  idConvocatoria    Int
+  nombre            String
+  cuce              String              @unique @default(uuid())
+  estado            String
+  entidad           String
+  departamento      String
+  fechaPublicacion  DateTime
+  fechaPresentacion DateTime
+  contacto          String
+  telefono          String
+  tipoContratacion  String
+  modalidad         String
+  Usuario           Usuario?            @relation(fields: [idUsuario], references: [id])
+  Formulario        Formulario?         @relation(fields: [idFormulario], references: [id])
+  Convocatoria      Convocatoria?       @relation(fields: [idConvocatoria], references: [id])
+  EmpresaAdjudicada EmpresaAdjudicada[]
+  Reporte           Reporte[]
+}
+
+model EmpresaAdjudicada {
+  id               Int       @id @default(autoincrement())
+  idProyecto       Int
+  fechaPublicacion String
+  puntaje          Int
+  proyecto         Proyecto? @relation(fields: [idProyecto], references: [id])
+  Reporte          Reporte[]
+}
+
+model Reporte {
+  id               Int                @id @default(autoincrement())
+  idEmpresaAdicada Int
+  idProyecto       Int
+  nombres          String
+  fechaReporte     DateTime
+  empresaAdicada   EmpresaAdjudicada? @relation(fields: [idEmpresaAdicada], references: [id])
+  proyecto         Proyecto?          @relation(fields: [idProyecto], references: [id])
+}
