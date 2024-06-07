@@ -57,7 +57,7 @@ export const Form = styled.form`
     flex-direction: column;
 `;
 
-export const FormGroup = styled.div`
+export const FormGroup = styled.form`
     width: 100%;
     height: 100%;
     margin-bottom: 15px;

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonSig, ContainerForm, DivButton, Table, Tra } from '../../style/formulariosStyleUno';
 import {Form, Titulo, Titulo2, FormGroup, Cuce, InputD} from '../../style/formulariosStyleDosTres';
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 const Once = () => {
+    const [form, setForm] = useState({
+        cuce: uuidv4(),
+        objetoContrato: "",
+        fechaLugarApertura:"",
+        direccion:""
+    });
     return (
         <ContainerForm>
             <Form>
@@ -22,10 +31,10 @@ const Once = () => {
                             <label>Dirección:</label>
                         </div>
                         <div>
-                            <InputD type="number" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="date" placeholder />
-                            <InputD type="text" placeholder />
+                            <InputD type="number" value={form.cuce} onChange={(event) => setForm((old) =>({...old, cuce:event.target.value}))} />
+                            <InputD type="text" value={form.objetoContrato} onChange={(event) => setForm((old) =>({...old, objetoContrato:event.target.value}))} />
+                            <InputD type="date" value={form.fechaLugarApertura} onChange={(event) => setForm((old) =>({...old, fechaLugarApertura:event.target.value}))} />
+                            <InputD type="text" value={form.direccion} onChange={(event) => setForm((old) =>({...old, direccion:event.target.value}))} />
                         </div>
                     </Cuce>
                 </FormGroup>

@@ -21,7 +21,7 @@ export const DivImg = styled.div`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   width: 30%; 
   height: 649px;
   border-radius: 8px;

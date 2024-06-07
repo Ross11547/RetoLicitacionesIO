@@ -2,11 +2,8 @@ import React from 'react'
 import { ButtonSig, ContainerForm, DivButton, Table, Th  } from '../style/formulariosStyleUno';
 import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD} from '../style/formulariosStyleDosTres';
 import { Link } from 'react-router-dom';
-import { useGetDelete } from '../hooks/useGetDelete';
-import { ENDPOINTS } from '../routes/enpoints';
 
 const Proyecto = () => {
-  
     return (
         <ContainerForm>
             <Form>
@@ -30,14 +27,14 @@ const Proyecto = () => {
                             <label>Modalidad:</label>
                         </div>
                         <div>
-                            <InputD type="text" placeholder />
-                            <InputD type="number" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="number" placeholder />
-                            <InputD type="text" placeholder />
-                            <InputD type="text" placeholder />
+                            <InputD type="text" required />
+                            <InputD type="number" required />
+                            <InputD type="text" required />
+                            <InputD type="text" required />
+                            <InputD type="text" required />
+                            <InputD type="number" required />
+                            <InputD type="text" required />
+                            <InputD type="text" required />
 
                         </div>
                     </Cuce>

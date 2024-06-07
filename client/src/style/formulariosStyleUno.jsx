@@ -4,6 +4,7 @@ import { Colors } from './colores';
 export const ContainerForm = styled.div`
     width: 100%;
     height: 100%;
+    padding-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction:column;
@@ -207,13 +208,11 @@ export const Table = styled.table`
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-collapse: collapse;
-
+    
     th, td {
         padding: 15px;
-        width: 250px;
         border-bottom: 1px solid ${Colors.primary100};
-        table-layout: col;
+        
     }
     thead{
         background-color: ${Colors.primary100};

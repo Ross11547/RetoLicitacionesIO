@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonSig, ContainerForm, DivButton, Tr, Table, Th, Tra} from '../../style/formulariosStyleUno';
 import {Form, Titulo, Titulo2} from '../../style/formulariosStyleDosTres';
-
+import { toast } from "react-toastify";
 
 const Siete = () => {
+    const [form,setForm] = useState({
+        item: 0,
+        itemLiteral: "",
+        itemNumeralTotal: 0,
+    });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch("http://localhost:5000/formulario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(
+                    {
+                        descripcion: "Formulario4",
+                        archivo: form
+                    }
+                ),
+            });
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            toast.success("Formulario Cuatro Enviado Correctamente");
+            const data = await response.json();
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
     return (
         <ContainerForm>
             <Form>
