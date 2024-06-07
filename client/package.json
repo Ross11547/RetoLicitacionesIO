@@ -14,19 +14,16 @@
     "file-saver": "^2.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.23.1",
     "react-toastify": "^10.0.5",
     "styled-components": "^6.1.11",
     "xlsx": "^0.18.5",
     "xlsx-style": "^0.8.13",
-=======
     "react-router-dom": "^6.22.3",
     "react-toastify": "^10.0.5",
     "styled-components": "^6.1.8",
     "uuid": "^9.0.1",
->>>>>>> a788a0d987be56f4dce3b51adb4b625b50595822
     "zustand": "^4.5.2"
   },
   "devDependencies": {
