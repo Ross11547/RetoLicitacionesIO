@@ -1,18 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../style/colores';
-import { Link, Navigate, Outlet } from 'react-router-dom';
-import Logos from '../../assets/klipartz.png'
-import { useUser } from '../../store/user';
-import { toast } from 'react-toastify';
+import React from "react";
+import styled from "styled-components";
+import { Colors } from "../../style/colores";
+import { Link, Navigate, Outlet } from "react-router-dom";
+import Logos from "../../assets/klipartz.png";
+import { useUser } from "../../store/user";
+import { toast } from "react-toastify";
 const Navar = () => {
-  const { user,logout } = useUser();
+  const { user, logout } = useUser();
   const handlerLogout = () => {
     logout();
-    toast.success("Cierre de sesion correcta")
-  }
+    toast.success("Cierre de sesion correcta");
+  };
   if (!user) {
-    return <Navigate to={"/"}></Navigate>
+    return <Navigate to={"/"}></Navigate>;
   }
   return (
     <>
@@ -26,7 +26,9 @@ const Navar = () => {
           <NavLink to="proyectos">Proyectos</NavLink>
         </NavLinks>
         <NavLinks>
-          <NavLink to="/" onClick={handlerLogout}>Salir</NavLink>
+          <NavLink to="/" onClick={handlerLogout}>
+            Salir
+          </NavLink>
         </NavLinks>
       </Navbar>
       <Body>
@@ -39,10 +41,10 @@ const Navar = () => {
 export default Navar;
 
 const Navbar = styled.nav`
-  width:100%; 
+  width: 100%;
   background: #ffffffdf;
-  position:relative;
-  z-index:1000;
+  position: relative;
+  z-index: 1000;
   padding: 10px 115px;
   display: flex;
   justify-content: space-between;
@@ -74,7 +76,7 @@ const NavLink = styled(Link)`
   margin-left: 40px;
   transition: 0.2s;
   border-bottom: 2px solid transparent;
-  z-index:1500;
+  z-index: 1500;
   &:hover {
     color: ${Colors.primary200};
     transition: 0.2s;
