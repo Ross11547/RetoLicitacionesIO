@@ -41,16 +41,16 @@ model Convocatoria {
 }
 
 model Formulario {
-  id          Int        @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   descripcion String
   archivo     Json
-  Proyecto    Proyecto[]
+  idProyecto  Int
+  proyecto    Proyecto? @relation(fields: [idProyecto], references: [id], onDelete: Cascade)
 }
 
 model Proyecto {
   id                Int                 @id @default(autoincrement())
   idUsuario         Int
-  idFormulario      Int
   idConvocatoria    Int
   nombre            String
   cuce              String              @unique @default(uuid())
@@ -64,10 +64,10 @@ model Proyecto {
   tipoContratacion  String
   modalidad         String
   Usuario           Usuario?            @relation(fields: [idUsuario], references: [id], onDelete: Cascade)
-  Formulario        Formulario?         @relation(fields: [idFormulario], references: [id], onDelete: Cascade)
   Convocatoria      Convocatoria?       @relation(fields: [idConvocatoria], references: [id], onDelete: Cascade)
   EmpresaAdjudicada EmpresaAdjudicada[]
   Reporte           Reporte[]
+  Formulario        Formulario[]
 }
 
 model EmpresaAdjudicada {
