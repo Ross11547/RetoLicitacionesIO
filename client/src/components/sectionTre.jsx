@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Colors } from "../style/colores";
 import { ButtonD, Cuce, Form1, Table, Th, Titulo, Titulo2, Titulo3 } from "../style/formulariosStyleUno";
@@ -58,6 +58,19 @@ const ContainerForm = styled.div`
 
 const SectionTwo = () => {
   const { res } = useGetDelete(ENDPOINTS.PROYECTO.GET);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setModalIsOpen(false);
+  };
+
   return (
     <>
       <Container className="container py-5">
@@ -92,10 +105,10 @@ const SectionTwo = () => {
                           <th>{v.nombre}</th>
                           <th>{convertirFecha(v.fechaPublicacion)}</th>
                           <th>{convertirFecha(v.fechaPresentacion)}</th>
+                          <th ><ButtonD onClick={() => openModal(v)}>DETALLES</ButtonD></th>
                         </tr>
                       ))}
                     </tbody>
-                    <th ><ButtonD><Link to="/detalles">DETALLES</Link></ButtonD></th>
                   </Scroll>
                 </Table>
                 <Titulo2>
@@ -104,6 +117,96 @@ const SectionTwo = () => {
             </CardBody>
           </Card>
         </ContainerForm>
+        {selectedProject && (
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Detalles del Proyecto"
+          style={{
+            content: {
+              top: "50%",
+              left: "50%",
+              right: "auto",
+              bottom: "auto",
+              marginRight: "-50%",
+              transform: "translate(-50%, -50%)",
+            },
+          }}
+        >
+          <ModalContent>
+            <h2>Detalles del Proyecto</h2>
+            <p>
+              <strong>Nombre:</strong> {selectedProject.nombre}
+            </p>
+            <p>
+              <strong>Teléfono:</strong> {selectedProject.telefono}
+            </p>
+            <p>
+              <strong>NIT:</strong> {selectedProject.Usuario.empresa.nit}
+            </p>
+            <p>
+              <strong>Dirección:</strong>{" "}
+              {selectedProject.Usuario.empresa.direccion}
+            </p>
+            <p>
+              <strong>Descripción:</strong>{" "}
+              {selectedProject.Usuario.empresa.descripcion}
+            </p>
+            <p>
+              <strong>CUCE:</strong> {selectedProject.cuce}
+            </p>
+            <p>
+              <strong>Entidad:</strong> {selectedProject.entidad}
+            </p>
+            <p>
+              <strong>Modalidad:</strong> {selectedProject.modalidad}
+            </p>
+            <p>
+              <strong>Fecha Publicación:</strong>{" "}
+              {convertirFecha(selectedProject.fechaPublicacion)}
+            </p>
+            <p>
+              <strong>Fecha Presentación:</strong>{" "}
+              {convertirFecha(selectedProject.fechaPresentacion)}
+            </p>
+            <p>
+              <strong>Contacto:</strong> {selectedProject.contacto}
+            </p>
+            {selectedProject.EmpresaAdjudicada.length > 0 &&
+            selectedProject.EmpresaAdjudicada[0].puntaje ? (
+              <>
+                <p>
+                  <strong>Puntaje:</strong>{" "}
+                  {selectedProject.EmpresaAdjudicada[0].puntaje}
+                </p>
+              </>
+            ) : (
+              <>
+                <form
+                  onSubmit={(e) => {
+                    handlePuntajeSubmit(e, selectedProject.id);
+                    handleEstadoSubmit(selectedProject.id);
+                  }}
+                >
+                  <label>
+                    Puntaje:
+                    <input
+                      type="number"
+                      value={puntaje}
+                      onChange={handlePuntajeChange}
+                      required
+                    />
+                  </label>
+                  <button type="submit">Guardar Puntaje</button>
+                </form>
+              </>
+            )}
+            <button type="button" className="close-button" onClick={closeModal}>
+              Cerrar
+            </button>
+          </ModalContent>
+        </Modal>
+      )}
       </Container>
     </>
   );

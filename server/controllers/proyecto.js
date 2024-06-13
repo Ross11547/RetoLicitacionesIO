@@ -46,7 +46,7 @@ app.get("/proyectoEmpresa", async (req, res) => {
 });
 app.post("/proyecto", async (req, res) => {
   try {
-    const proyecto = await prisma.proyecto.create({
+    const proyecto = await prisma.proyecto.createMany({
       data: req.body,
     });
     res.json({

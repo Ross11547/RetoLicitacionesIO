@@ -16,7 +16,7 @@ app.get("/convocatoria", async (req, res) => {
 });
 app.post("/convocatorias", async (req, res) => {
   try {
-    const convocatoria = await prisma.convocatoria.create({
+    const convocatoria = await prisma.convocatoria.createMany({
       data: req.body,
     });
     res.json({
