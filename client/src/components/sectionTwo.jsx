@@ -6,6 +6,7 @@ import Sservicios from "../assets/Sservicios.svg";
 import Sconsultoria from "../assets/SConsultoria.avif";
 import styled, { keyframes } from "styled-components";
 import { Colors } from "../style/colores";
+import { Link } from 'react-router-dom';
 
 const SectionTwo = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +35,7 @@ const SectionTwo = () => {
     <Container>
       <ImageWrapper>
         <img src={Fonto} />
-        <button><a href="">LEER MÁS</a></button>
+        <button><Link to="/leerMas">LEER MÁS</Link></button>
       </ImageWrapper>
       <Containera>
         <BackgroundImage src={Sobras} />

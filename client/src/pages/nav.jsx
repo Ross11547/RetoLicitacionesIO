@@ -3,8 +3,15 @@ import styled from 'styled-components';
 import { Colors } from '../style/colores';
 import { Link, Outlet } from 'react-router-dom';
 import Logos from '../assets/klipartz.png'
+import { useUser } from '../store/user';
+import { toast } from 'react-toastify';
 
 const Nav = () => {
+  const { user,logout } = useUser();
+  const handlerLogout = () => {
+    logout();
+    toast.success("Cierre de sesion correcta")
+  }
   return (
     <>
       <Navbar>
@@ -12,12 +19,20 @@ const Nav = () => {
         <NavLinks>
           <NavLink to="/">Inicio</NavLink>
           <NavLink to="acercaNosotros">Acerca de Nosotros</NavLink>
-          <NavLink to="convoObras">Convocatorias</NavLink>
+          <NavLink to="convocatoriasMenu">Convocatorias</NavLink>
           <NavLink to="result">Resultados</NavLink>
         </NavLinks>
         <NavLinks>
-          <NavLink to="inicioSesion">Inicio Sesión</NavLink>
-          <NavLink to="registro">Registro</NavLink>
+        {user ? (
+            <>
+              <NavLink onClick={handlerLogout}>Cerrar Sesión</NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink to="/inicioSesion">Inicio Sesión</NavLink>
+              <NavLink to="/registro">Registro</NavLink>
+            </>
+          )}
         </NavLinks>
       </Navbar>
       <Body>

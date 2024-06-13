@@ -1,15 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
 import { Colors } from "../style/colores";
 import { ButtonD, Cuce, Form1, Table, Titulo, Titulo2, Titulo3 } from "../style/formulariosStyleUno";
-import Nav from "./nav";
-import Footer from "./footer";
 import { Link } from "react-router-dom";
 import Foot from "./admin/foot";
 
 const Card = styled.div`
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.499) 0px 2px 4px 0px;
+  backdrop-filter: blur(20px);
 `;
 
 const CardBody = styled.div`
@@ -58,6 +57,7 @@ const ContainerForm = styled.div`
 const ConvoServicios = () => {
   return (
     <>
+      <MovingBackground />
       <Container className="container py-5">
         <ContainerForm>
           <CardBody1>
@@ -102,4 +102,22 @@ const ConvoServicios = () => {
   )
 }
 
-export default ConvoServicios
+export default ConvoServicios;
+
+
+const moveBackground = keyframes`
+0% { background-position: 0 0; }
+100% { background-position: 100% 100%; }
+`;
+
+const MovingBackground = styled.div`
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 1400px;
+background: url('https://vinccler.wordpress.com/wp-content/uploads/2020/10/vinccler-construccion-conjunto-de-tareas-y-objetivos-definidos.jpg') repeat;
+background-size:cover;
+animation: ${moveBackground} 80s linear infinite;
+z-index: -2;
+`;

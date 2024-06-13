@@ -5,7 +5,6 @@ export const Container = styled.div`
     width: 100%;
     height: calc(100% - 80px);
     position: relative;
-    background: ${Colors.primary500};
 `;
 
 export const Titulo = styled.div`

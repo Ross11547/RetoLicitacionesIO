@@ -7,10 +7,15 @@ import SectionTre from "../components/sectionTre";
 import SectionTwo from "../components/sectionTwo";
 import { Colors } from "../style/colores";
 import Foot from "./admin/foot";
+import { ENDPOINTS } from "../routes/enpoints";
+import { useGetDelete } from "../hooks/useGetDelete";
+
 
 const Inicio = () => {
+  const {res: resEmpresa} = useGetDelete(ENDPOINTS.EMPRESA.GET);
+  const {res} = useGetDelete(ENDPOINTS.CONVOCATORIA.GET);
   return (
-    <>
+    <> 
       <Container>
         <Img src="https://fiic.la/blog/wp-content/uploads/2019/07/Articuloguateweb.jpg" />
         <DivDate>
@@ -25,11 +30,11 @@ const Inicio = () => {
         </DivDate>
         <Div2>
           <div className="DivTipo">
-            <label className="h1">10</label>
+            <label className="h1">{resEmpresa.length}</label>
             <label>EMPRESAS</label>
           </div>
           <div className="DivTipo2">
-            <label className="h1">20</label>
+            <label className="h1">{res.length}</label>
             <label>CONVOCATORIAS</label>
           </div>
           <DivTipoLici>

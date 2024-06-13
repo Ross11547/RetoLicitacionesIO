@@ -9,10 +9,10 @@ const Navar = () => {
   const { user, logout } = useUser();
   const handlerLogout = () => {
     logout();
-    toast.success("Cierre de sesion correcta");
-  };
-  if (!user) {
-    return <Navigate to={"/"}></Navigate>;
+    toast.success("Cierre de sesion correcta")
+  }
+  if (!user || user.rol === "usuario") {
+    return <Navigate to={"/"}></Navigate>
   }
   return (
     <>

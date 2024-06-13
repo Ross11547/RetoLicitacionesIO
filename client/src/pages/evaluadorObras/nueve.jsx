@@ -40,30 +40,53 @@ const Nueve = () => {
         sieteContinua: false,
         sieteDesaclificada: false,
     });
+    const [table, setTable] = useState({
+        rows: [{ values: ["", false, false, false, false] }]
+    });
+    const addRow = (e) => {
+        e.preventDefault();
+        setTable((prevTable) => ({
+            ...prevTable,
+            rows: [...prevTable.rows, { values: ["", false, false, false, false] }],
+        }));
+    };
+
+    const removeRow = (e, rowIndex) => {
+        e.preventDefault();
+        setTable((prevTable) => {
+            const newRows = prevTable.rows.filter((_, index) => index !== rowIndex);
+            return { ...prevTable, rows: newRows };
+        });
+    };
+
+    const jsonData = {
+        tableData: table.rows.map((row) => row.values),
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await fetch("http://localhost:5000/formulario", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(
-              {
-                descripcion: "Formulario2",
-                archivo: form
-              }
-            ),
-          });
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          toast.success("Formularios Enviados Correctamente");
-          const data = await response.json();
+            const response = await fetch("http://localhost:5000/formulario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(
+                    {
+                        descripcion: "Formulario2",
+                        archivo: form
+                    }
+                ),
+            });
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            toast.success("Formularios Enviados Correctamente");
+            const data = await response.json();
         } catch (error) {
-          console.error("Error:", error);
+            console.error("Error:", error);
         }
-      };
+    };
     return (
         <ContainerForm>
             <Form>
@@ -176,10 +199,42 @@ const Nueve = () => {
                         </Tra>
                     </tbody>
                 </Table>
+                <Table>
+                    <tbody>
+                        {table.rows.map((row, rowIndex) => (
+                            <Tra key={rowIndex}>
+                                <th>{rowIndex + 1}</th>
+                                {row.values.map((value, colIndex) => (
+                                    <td key={colIndex}>
+                                        {colIndex === 0 ? (
+                                            <input
+                                                type="text"
+                                                value={value}
+                                                onChange={(event) => handleInputChange(event, rowIndex, colIndex)}
+                                            />
+                                        ) : (
+                                            <input
+                                                type="checkbox"
+                                                checked={value}
+                                                onChange={(event) => handleInputChange(event, rowIndex, colIndex)}
+                                            />
+                                        )}
+                                    </td>
+                                ))}
+                                <td>
+                                    <button type="button" onClick={(event) => removeRow(event, rowIndex)}>x</button>
+                                </td>
+                            </Tra>
+                        ))}
+                    </tbody>
+                </Table>
                 <Titulo2>
+                    <td colSpan={5}>
+                        <button type="button" onClick={addRow}>Agregar Fila</button>
+                    </td>
                 </Titulo2>
                 <DivButton>
-                    <ButtonSig onClick={handleSubmit}><Link to="/nueve">ENVIAR</Link></ButtonSig>
+                    <ButtonSig onClick={handleSubmit}><Link to="/diez">ENVIAR</Link></ButtonSig>
                 </DivButton>
             </Form>
         </ContainerForm>

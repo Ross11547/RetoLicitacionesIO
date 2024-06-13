@@ -17,6 +17,8 @@ import { convertirFecha } from "../../utils/dateformat";
 import { Link as Likes } from "react-router-dom";
 import { useFormUno } from "../../store/formUno";
 import { toast } from "react-toastify";
+import styled from "styled-components";
+import { Colors } from "../../style/colores";
 const Convocatoria = () => {
   const { res, getData } = useGetDelete(ENDPOINTS.CONVOCATORIA.GET);
   const [form, setForm] = useState({
@@ -105,7 +107,7 @@ const Convocatoria = () => {
   const handleEdit = (id) => {
     const convocatoria = res.find((v) => v.id === id);
     setForm({
-      nombre:convocatoria.nombre,
+      nombre: convocatoria.nombre,
       descripcion: convocatoria.descripcion,
       departamento: convocatoria.departamento,
       modalidad: convocatoria.modalidad,
@@ -191,10 +193,12 @@ const Convocatoria = () => {
             </>
           ) : (
             <>
-              <h1>Debe llenar primero el formulario</h1>
-              <button>
-                <Likes to="/dashboard/AdmUno">LLenar formulario</Likes>
-              </button>
+              <LLenarFrom>
+                <h1>Debe llenar primero el formulario</h1>
+                <button>
+                  <Likes to="/dashboard/AdmUno">LLenar formulario</Likes>
+                </button>
+              </LLenarFrom>
             </>
           )}
         </Section>
@@ -237,3 +241,30 @@ const Convocatoria = () => {
 };
 
 export default Convocatoria;
+
+const LLenarFrom = styled.div`
+width:550px;
+height:225px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+h1{
+  display:flex;
+  font-size: 25px;
+  }
+button{
+  width: 150px;
+  height: 50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border:none;
+  border-radius:10px;
+  background: ${Colors.primary200};
+  a{
+    color: ${Colors.primary500};
+    text-decoration:none;
+  }
+}
+`;

@@ -4,7 +4,7 @@ import { Colors } from './colores';
 export const ContainerForm = styled.div`
     width: 100%;
     height: 100%;
-    padding-top: 30px;
+    padding-top: 70px;
     display: flex;
     justify-content: center;
     flex-direction:column;
@@ -243,4 +243,14 @@ export const Tr = styled.tr`
     `;
 export const Th = styled.th`
         text-align: left;
+        button{
+            width:80px;
+            height:30px;
+            border: none;
+            background: ${Colors.primary200};
+            border-radius:10px;
+            font-size: 12px;
+            color: ${Colors.primary500};
+            cursor: pointer;
+        }
     `;

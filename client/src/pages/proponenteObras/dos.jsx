@@ -68,7 +68,7 @@ const Dos = () => {
                 </Titulo2>
                 <Table>
                     <tbody>
-                        <Th rowSpan={4}>Solicito la aplicación del siguiente margen de preferencia para el proceso de contratación, conforme lo establecido en el inciso a) del parágrafo II, del Artículo 30 de las NB-SABS
+                        <Th rowSpan={4}> Solicito la aplicación del siguiente margen de preferencia para el proceso de contratación, conforme lo establecido en el inciso a) del parágrafo II, del Artículo 30 de las NB-SABS
                             (El proponente solo deberá marcar una de las opciones, el no marcado de la casilla se entenderá como la no solicitud de ningún  margen de preferencia)</Th>
                         <tr>
                             <th><input type="checkbox" checked={form.empresasConstructorasUnipersonales} onChange={(event) => setForm((old) => ({...old, empresasConstructorasUnipersonales: event.target.checked}))}/></th>
