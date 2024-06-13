@@ -41,6 +41,7 @@ CREATE TABLE "Formulario" (
     "id" SERIAL NOT NULL,
     "descripcion" TEXT NOT NULL,
     "archivo" JSONB NOT NULL,
+    "idProyecto" INTEGER NOT NULL,
 
     CONSTRAINT "Formulario_pkey" PRIMARY KEY ("id")
 );
@@ -49,7 +50,6 @@ CREATE TABLE "Formulario" (
 CREATE TABLE "Proyecto" (
     "id" SERIAL NOT NULL,
     "idUsuario" INTEGER NOT NULL,
-    "idFormulario" INTEGER NOT NULL,
     "idConvocatoria" INTEGER NOT NULL,
     "nombre" TEXT NOT NULL,
     "cuce" TEXT NOT NULL,
@@ -94,10 +94,10 @@ CREATE UNIQUE INDEX "Proyecto_cuce_key" ON "Proyecto"("cuce");
 ALTER TABLE "Usuario" ADD CONSTRAINT "Usuario_idEmpresa_fkey" FOREIGN KEY ("idEmpresa") REFERENCES "Empresa"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Proyecto" ADD CONSTRAINT "Proyecto_idUsuario_fkey" FOREIGN KEY ("idUsuario") REFERENCES "Usuario"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Formulario" ADD CONSTRAINT "Formulario_idProyecto_fkey" FOREIGN KEY ("idProyecto") REFERENCES "Proyecto"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Proyecto" ADD CONSTRAINT "Proyecto_idFormulario_fkey" FOREIGN KEY ("idFormulario") REFERENCES "Formulario"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Proyecto" ADD CONSTRAINT "Proyecto_idUsuario_fkey" FOREIGN KEY ("idUsuario") REFERENCES "Usuario"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Proyecto" ADD CONSTRAINT "Proyecto_idConvocatoria_fkey" FOREIGN KEY ("idConvocatoria") REFERENCES "Convocatoria"("id") ON DELETE CASCADE ON UPDATE CASCADE;

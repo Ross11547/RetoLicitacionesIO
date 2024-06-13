@@ -4,7 +4,7 @@ import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD } from '../../style/form
 import { Link } from 'react-router-dom';
 import { toast } from "react-toastify";
 
-const Tres = () => {
+const Tres = ({setStep}) => {
     const [form, setForm] = useState({
         nombreProponente: "",
         numeroIdentificaciónTributaria: 0,
@@ -90,7 +90,7 @@ const Tres = () => {
                     <label></label>
                 </Titulo2>
                 <DivButton>
-                    <ButtonSig onClick={handleSubmit}><Link to="/tres">SIGUIENTE</Link></ButtonSig>
+                    <ButtonSig onClick={() => setStep(4)}>Siguiente</ButtonSig>
                 </DivButton>
             </Form>
         </ContainerForm>

@@ -738,7 +738,7 @@ const Siete = () => {
                 <Titulo2>
                 </Titulo2>
                 <DivButton>
-                    <ButtonSig>SIGUIENTE</ButtonSig>
+                    <ButtonSig>Guardar todo</ButtonSig>
                 </DivButton>
             </Form>
         </ContainerForm>

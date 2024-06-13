@@ -4,7 +4,7 @@ import { Form, Titulo, Titulo2 } from '../../style/formulariosStyleDosTres';
 import { toast } from "react-toastify";
 import { Link } from 'react-router-dom';
 
-const Cinco = () => {
+const Cinco = ({ setStep }) => {
     const [form, setForm] = useState({
         denominacionAsociacion: "",
         nombreAsociado: "",
@@ -200,7 +200,7 @@ const Cinco = () => {
                     <label></label>
                 </Titulo2>
                 <DivButton>
-                    <ButtonSig onClick={handleSubmit}><Link to="/cinco">ENVIAR</Link></ButtonSig>
+                <ButtonSig onClick={() => setStep(6)}>Siguiente</ButtonSig>
                 </DivButton>
             </Form>
         </ContainerForm>
