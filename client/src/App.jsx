@@ -54,22 +54,24 @@ function App() {
             <Route path="/" element={<Inicio />} />
             <Route path="/" element={<SectionTwo />} />
             <Route path="/acercaNosotros" element={<Acercanosotros />} />
-            <Route path="/convoObras" element={<ConvoObras />} />
+            <Route path="/convocatoriasMenu" element={<MenuConvo />} />
             <Route path="/postular" element={<Proyecto />} />
             <Route path="/siguiente" element={<Uno />} />
             <Route path="/result" element={<Resultado />} />
             <Route path="/inicioSesion" element={<InicioSesion />} />
             <Route path="/registro" element={<Register />} />
-            <Route path="/obras" element={<Uno />} />
+            <Route path="/obras" element={<ConvoObras/>} />
             <Route path="/uno" element={<Dos />} />
             <Route path="/obrasInicio" element={<MenuConvo />} />
             <Route path="/serviciosInicio" element={<MenuConvo />} />
             <Route path="/bienesInicio" element={<MenuConvo />} />
+            <Route path="/leerMas" element={<Acercanosotros/>}/>
           </Route>
           <Route path="/dashboard" element={<Navar />}>
             <Route path="/dashboard/empresas" element={<Empresa />} />
             <Route path="/dashboard/formularios" element={<Formularios />} />
             <Route path="/dashboard/convocatorias" element={<Convocatoria />} />
+            <Route path="/dashboard/llenarConvo"element={<Uno />} />
             <Route path="/dashboard/empresasAdj" element={<EmpresasAdj />} />
             <Route path="/dashboard/proyectos" element={<Licitantes />} />
             <Route path="/dashboard/AdmUno" element={<Uno />} />

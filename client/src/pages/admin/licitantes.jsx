@@ -75,7 +75,7 @@ const Licitantes = () => {
           <Table>
             <thead>
               <Tr>
-                <th>N</th>
+                <th>N°</th>
                 <th>NOMBRE PROYECTO</th>
                 <th>ESTADO</th>
                 <th>DEPARTAMENTO</th>

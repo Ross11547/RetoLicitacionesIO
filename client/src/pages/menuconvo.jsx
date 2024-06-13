@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 import { Colors } from '../style/colores'
 import Foot from './admin/foot'
 import { Link } from 'react-router-dom'
@@ -8,6 +8,7 @@ const MenuConvo = () => {
   return (
     <>
       <Container>
+        <MovingBackground />
         <ContainerForm>
           <Card>
             <h1>TIPO DE LICITACIÓN PARA CONVOCATORIA</h1>
@@ -39,14 +40,18 @@ const ContainerForm = styled.div`
   width: 1519px;
   height: 100%;
   padding: 80px;
+  padding-top: 100px;
+  
+
 `;
 const Card = styled.div`
-  height: 100px; 
+  height: 125px; 
   display: flex;
   justify-content:center;
   align-items: center;
   border-radius: 5px;
-  background: ${Colors.primary300};
+  background: ${Colors.primary100};
+  border-radius:10px;
   box-shadow: rgba(0, 0, 0, 0.499) 0px 2px 4px 0px;
   h1{
   color:${Colors.primary500}
@@ -54,12 +59,14 @@ const Card = styled.div`
   `;
 
 const Card1 = styled.div`
-  height: 570px; 
+  height: 700px; 
   display: flex;
+  border-radius:10px;
   justify-content:center;
   align-items: center;
-  background: ${Colors.primary500};
+  backdrop-filter: blur(20px);
   margin-block-start: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   flex-direction: column;
   gap: 55px;
   h1{
@@ -91,7 +98,22 @@ const Card1 = styled.div`
 const CardBody1 = styled.div`
   width: 100%;
   margin-top: 5px;
-  background:${Colors.primary400};
-  box-shadow: rgba(0, 0, 0, 0.499) 0px 2px 4px 0px;
-  border-radius: 5px;
+  
   `;
+
+const moveBackground = keyframes`
+0% { background-position: 0 0; }
+100% { background-position: 100% 100%; }
+`;
+
+const MovingBackground = styled.div`
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url('https://cdn.corporate.walmart.com/3c/ba/b944cfac494b85660220911f1163/istock-6675793-large.jpg') repeat;
+background-size:cover;
+animation: ${moveBackground} 80s linear infinite;
+z-index: -2;
+`;

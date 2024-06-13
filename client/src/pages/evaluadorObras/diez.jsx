@@ -44,6 +44,29 @@ const Diez = () => {
         ochoContinua: false,
         ochoDesaclificada: false,
     });
+    const [table, setTable] = useState({
+        rows: [{ values: ["", false, false, false, false] }]
+    });
+    const addRow = (e) => {
+        e.preventDefault();
+        setTable((prevTable) => ({
+            ...prevTable,
+            rows: [...prevTable.rows, { values: ["", false, false, false, false] }],
+        }));
+    };
+
+    const removeRow = (e, rowIndex) => {
+        e.preventDefault();
+        setTable((prevTable) => {
+            const newRows = prevTable.rows.filter((_, index) => index !== rowIndex);
+            return { ...prevTable, rows: newRows };
+        });
+    };
+
+    const jsonData = {
+        tableData: table.rows.map((row) => row.values),
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -136,7 +159,7 @@ const Diez = () => {
                         <Tra>
                             <Th>3. Además, cada socio en forma independiente presentará:
                                 FORMULARIO A-2d Identificación de Integrantes de la Asociación Accidental.</Th>
-                                <th><input type="checkbox" checked={form.tresSi} onChange={(event) => setForm((old) => ({ ...old, tresSi: event.target.checked }))} /></th>
+                            <th><input type="checkbox" checked={form.tresSi} onChange={(event) => setForm((old) => ({ ...old, tresSi: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.tresNo} onChange={(event) => setForm((old) => ({ ...old, tresNo: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.tresContinua} onChange={(event) => setForm((old) => ({ ...old, tresContinua: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.tresDesaclificada} onChange={(event) => setForm((old) => ({ ...old, tresDesaclificada: event.target.checked }))} /></th>
@@ -155,7 +178,7 @@ const Diez = () => {
                         <Tra>
                             <Th>5. FORMULARIO C-1.
                                 Señalar (Por ej.: Organigrama, Métodos Constructivos, Número de frentes a utilizar, otros).</Th>
-                                <th><input type="checkbox" checked={form.cincoSi} onChange={(event) => setForm((old) => ({ ...old, cincoSi: event.target.checked }))} /></th>
+                            <th><input type="checkbox" checked={form.cincoSi} onChange={(event) => setForm((old) => ({ ...old, cincoSi: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.cincoNo} onChange={(event) => setForm((old) => ({ ...old, cincoNo: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.cincoContinua} onChange={(event) => setForm((old) => ({ ...old, cincoContinua: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.cincoDesaclificada} onChange={(event) => setForm((old) => ({ ...old, cincoDesaclificada: event.target.checked }))} /></th>
@@ -179,7 +202,7 @@ const Diez = () => {
                             <th><input type="checkbox" checked={form.sieteDesaclificada} onChange={(event) => setForm((old) => ({ ...old, sieteDesaclificada: event.target.checked }))} /></th>
                         </Tra>
                         <Tra>
-                            <Th>8. Otros (señalar).</Th>
+                            <Th>8. Otros (señalar/añadir).</Th>
                             <th><input type="checkbox" checked={form.ochoSi} onChange={(event) => setForm((old) => ({ ...old, ochoSi: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.ochoNo} onChange={(event) => setForm((old) => ({ ...old, ochoNo: event.target.checked }))} /></th>
                             <th><input type="checkbox" checked={form.ochoContinua} onChange={(event) => setForm((old) => ({ ...old, ochoContinua: event.target.checked }))} /></th>
@@ -187,7 +210,39 @@ const Diez = () => {
                         </Tra>
                     </tbody>
                 </Table>
+                <Table>
+                    <tbody>
+                        {table.rows.map((row, rowIndex) => (
+                            <Tra key={rowIndex}>
+                                <th>{rowIndex + 1}</th>
+                                {row.values.map((value, colIndex) => (
+                                    <td key={colIndex}>
+                                        {colIndex === 0 ? (
+                                            <input
+                                                type="text"
+                                                value={value}
+                                                onChange={(event) => handleInputChange(event, rowIndex, colIndex)}
+                                            />
+                                        ) : (
+                                            <input
+                                                type="checkbox"
+                                                checked={value}
+                                                onChange={(event) => handleInputChange(event, rowIndex, colIndex)}
+                                            />
+                                        )}
+                                    </td>
+                                ))}
+                                <td>
+                                    <button type="button" onClick={(event) => removeRow(event, rowIndex)}>x</button>
+                                </td>
+                            </Tra>
+                        ))}
+                    </tbody>
+                </Table>
                 <Titulo2>
+                            <td colSpan={5}>
+                                <button type="button" onClick={addRow}>Agregar Fila</button>
+                            </td>
                 </Titulo2>
                 <DivButton>
                     <ButtonSig onClick={handleSubmit}><Link to="/diez">ENVIAR</Link></ButtonSig>

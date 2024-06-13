@@ -11,7 +11,7 @@ const Navar = () => {
     logout();
     toast.success("Cierre de sesion correcta")
   }
-  if (!user) {
+  if (!user || user.rol === "usuario") {
     return <Navigate to={"/"}></Navigate>
   }
   return (

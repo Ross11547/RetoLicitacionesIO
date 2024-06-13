@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ButtonSig, ContainerForm, DivButton, Form, FormGroup, Table, TextoTres, Th, Titulo, Titulo2 } from "../../style/formulariosStyleUno";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import { toast } from "react-toastify";
 
 const Uno = () => {
   const [form, setForm] = useState({
@@ -103,19 +104,19 @@ const Uno = () => {
               <tr>
                 <th colSpan={2}>Entidad Convocante</th>
                 <th colSpan={6}>
-                  <input type="text" required value={form.entidadConvocante} onChange={(event) => setForm((old) => ({ ...old, entidadConvocante: event.target.value, }))}/>
+                  <input type="text" required value={form.entidadConvocante} onChange={(event) => setForm((old) => ({ ...old, entidadConvocante: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
                 <th colSpan={2}>Modalidad de contratación</th>
                 <th colSpan={2}>
-                  <input type="text" required value={form.modalidadContratacion} onChange={(event) => setForm((old) => ({ ...old, modalidadContratacion: event.target.value, }))}/>
+                  <input type="text" required value={form.modalidadContratacion} onChange={(event) => setForm((old) => ({ ...old, modalidadContratacion: event.target.value, }))} />
                 </th>
                 <th colSpan={2}>
                   Código Interno que la Entidad utiliza para identificar el proceso
                 </th>
                 <th colSpan={2}>
-                  <input type="number" required value={form.codigoInterno} onChange={(event) => setForm((old) => ({ ...old, codigoInterno: event.target.value, }))}/>
+                  <input type="number" required value={form.codigoInterno} onChange={(event) => setForm((old) => ({ ...old, codigoInterno: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
@@ -125,13 +126,13 @@ const Uno = () => {
                 </th>
                 <th colSpan={2}>Gestión</th>
                 <th>
-                  <input type="number" disabled value={form.gestion} onChange={(event) => setForm((old) => ({ ...old, gestion: event.target.value, }))}/>
+                  <input type="number" disabled value={form.gestion} onChange={(event) => setForm((old) => ({ ...old, gestion: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
                 <th colSpan={2}>Objeto de la contratación</th>
                 <th colSpan={6}>
-                  <input type="text" required value={form.objetoContratacion} onChange={(event) => setForm((old) => ({ ...old, objetoContratacion: event.target.value, }))}/>
+                  <input type="text" required value={form.objetoContratacion} onChange={(event) => setForm((old) => ({ ...old, objetoContratacion: event.target.value, }))} />
                 </th>
               </tr>
               <th colSpan={2} rowSpan={3}>
@@ -143,10 +144,10 @@ const Uno = () => {
               </tr>
               <tr>
                 <th colSpan={3}>
-                  <input type="checkbox" checked={form.precioEvaluadoBajo} onChange={(event) => setForm((old) => ({ ...old, precioEvaluadoBajo: event.target.checked }))}/>
+                  <input type="checkbox" checked={form.precioEvaluadoBajo} onChange={(event) => setForm((old) => ({ ...old, precioEvaluadoBajo: event.target.checked }))} />
                 </th>
                 <th colSpan={3}>
-                  <input type="checkbox" checked={form.calidadPropuTecyCost} onChange={(event) => setForm((old) => ({ ...old, calidadPropuTecyCost: event.target.checked }))}/>
+                  <input type="checkbox" checked={form.calidadPropuTecyCost} onChange={(event) => setForm((old) => ({ ...old, calidadPropuTecyCost: event.target.checked }))} />
                 </th>
               </tr>
               <th colSpan={2} rowSpan={3}>
@@ -159,14 +160,14 @@ const Uno = () => {
               </tr>
               <tr>
                 <th colSpan={2}>
-                  <input type="checkbox" checked={form.porTotal} onChange={(event) => setForm((old) => ({ ...old, porTotal: event.target.checked }))}/>
+                  <input type="checkbox" checked={form.porTotal} onChange={(event) => setForm((old) => ({ ...old, porTotal: event.target.checked }))} />
                 </th>
                 <th colSpan={2}>
-                <input type="checkbox" checked={form.porTramos} onChange={(event) => setForm((old) => ({ ...old, porTramos: event.target.checked }))}/>
+                  <input type="checkbox" checked={form.porTramos} onChange={(event) => setForm((old) => ({ ...old, porTramos: event.target.checked }))} />
                 </th>
                 <th colSpan={2}>
-                  <input type="checkbox" checked={form.por} onChange={(event) => setForm((old) => ({ ...old, porPaquetes: event.target.checked }))}/>
-                </th> 
+                  <input type="checkbox" checked={form.por} onChange={(event) => setForm((old) => ({ ...old, porPaquetes: event.target.checked }))} />
+                </th>
               </tr>
               <tr>
                 <th colSpan={4}>Precio Referencia</th>
@@ -174,10 +175,10 @@ const Uno = () => {
               </tr>
               <tr>
                 <th colSpan={4}>
-                  <input type="text" required value={form.precioReferencia} onChange={(event) => setForm((old) => ({ ...old, precioReferencia: event.target.value, }))}/>
+                  <input type="text" required value={form.precioReferencia} onChange={(event) => setForm((old) => ({ ...old, precioReferencia: event.target.value, }))} />
                 </th>
                 <th colSpan={4}>
-                  <input type="text" required value={form.contratcionFormalizaraMediante} onChange={(event) => setForm((old) => ({ ...old, contratcionFormalizaraMediante: event.target.value, }))}/>
+                  <input type="text" required value={form.contratcionFormalizaraMediante} onChange={(event) => setForm((old) => ({ ...old, contratcionFormalizaraMediante: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
@@ -185,7 +186,7 @@ const Uno = () => {
                   Plazo de Ejecución de Obra (en días calendario)
                 </Th>
                 <th colSpan={6}>
-                  <input type="text" required value={form.plazoEjecucionObra} onChange={(event) => setForm((old) => ({ ...old, plazoEjecucionObra: event.target.value, }))}/>
+                  <input type="text" required value={form.plazoEjecucionObra} onChange={(event) => setForm((old) => ({ ...old, plazoEjecucionObra: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
@@ -194,13 +195,13 @@ const Uno = () => {
                   se requiera)
                 </Th>
                 <th colSpan={6}>
-                  <input type="text" value={form.garantiaSeriedad} onChange={(event) => setForm((old) => ({ ...old, garantiaSeriedad: event.target.value, }))}/>
+                  <input type="text" value={form.garantiaSeriedad} onChange={(event) => setForm((old) => ({ ...old, garantiaSeriedad: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
                 <Th colSpan={2}>Garantía de Cumplimiento de Contrato</Th>
                 <th colSpan={6}>
-                  <input type="text" required value={form.garantiaCumplimiento} onChange={(event) => setForm((old) => ({ ...old, garantiaCumplimiento: event.target.value, }))}/>
+                  <input type="text" required value={form.garantiaCumplimiento} onChange={(event) => setForm((old) => ({ ...old, garantiaCumplimiento: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
@@ -208,7 +209,7 @@ const Uno = () => {
                   Garantía Adicional a la de Cumplimiento de Contrato
                 </Th>
                 <th colSpan={6}>
-                  <input type="text" required value={form.garantiaAdicional} onChange={(event) => setForm((old) => ({ ...old, garantiaAdicional: event.target.value, }))}/>
+                  <input type="text" required value={form.garantiaAdicional} onChange={(event) => setForm((old) => ({ ...old, garantiaAdicional: event.target.value, }))} />
                 </th>
               </tr>
               <th colSpan={2} rowSpan={3}>
@@ -216,13 +217,13 @@ const Uno = () => {
               </th>
               <tr>
                 <th>
-                  <input type="checkbox" checked={form.presupuestodeGestion} onChange={(event) => setForm((old) => ({ ...old, presupuestodeGestion: event.target.checked }))}/>
+                  <input type="checkbox" checked={form.presupuestodeGestion} onChange={(event) => setForm((old) => ({ ...old, presupuestodeGestion: event.target.checked }))} />
                 </th>
                 <Th colSpan={5}>Presupuesto de la gestión en curso</Th>
               </tr>
               <tr>
                 <th>
-                  <input type="checkbox" checked={form.pesupuestodeProximaGestion} onChange={(event) => setForm((old) => ({ ...old, pesupuestodeProximaGestion: event.target.checked }))}/>
+                  <input type="checkbox" checked={form.pesupuestodeProximaGestion} onChange={(event) => setForm((old) => ({ ...old, pesupuestodeProximaGestion: event.target.checked }))} />
                 </th>
                 <Th colSpan={5}>
                   Presupuesto de la próxima gestión (el proceso se iniciará una
@@ -242,18 +243,18 @@ const Uno = () => {
               </tr>
               <tr>
                 <th colSpan={3}>
-                <input type="text" required value={form.nombreOrganismoFinanciador} onChange={(event) => setForm((old) => ({ ...old, nombreOrganismoFinanciador: event.target.value, }))}/>
+                  <input type="text" required value={form.nombreOrganismoFinanciador} onChange={(event) => setForm((old) => ({ ...old, nombreOrganismoFinanciador: event.target.value, }))} />
                 </th>
                 <th colSpan={3}>
-                  <input type="number" required value={form.financiamiento} onChange={(event) => setForm((old) => ({ ...old, financiamiento: event.target.value, }))}/>
+                  <input type="number" required value={form.financiamiento} onChange={(event) => setForm((old) => ({ ...old, financiamiento: event.target.value, }))} />
                 </th>
               </tr>
               <tr>
                 <th colSpan={3}>
-                  <input type="text" required value={form.nombreOrganismoFinanciadorDos} onChange={(event) => setForm((old) => ({ ...old, nombreOrganismoFinanciadorDos: event.target.value, }))}/>
+                  <input type="text" required value={form.nombreOrganismoFinanciadorDos} onChange={(event) => setForm((old) => ({ ...old, nombreOrganismoFinanciadorDos: event.target.value, }))} />
                 </th>
                 <th colSpan={3}>
-                  <input type="number" required value={form.financiamientoDos} onChange={(event) => setForm((old) => ({ ...old, financiamientoDos: event.target.value, }))}/>
+                  <input type="number" required value={form.financiamientoDos} onChange={(event) => setForm((old) => ({ ...old, financiamientoDos: event.target.value, }))} />
                 </th>
               </tr>
             </tbody>
@@ -275,16 +276,16 @@ const Uno = () => {
                 Domicilio de la Entidad Convocante
               </th>
               <th rowSpan={3} colSpan={3}>
-                <input type="text" required value={form.domicilioEntidadConvocante} onChange={(event) => setForm((old) => ({ ...old, domicilioEntidadConvocante: event.target.value, }))}/>
+                <input type="text" required value={form.domicilioEntidadConvocante} onChange={(event) => setForm((old) => ({ ...old, domicilioEntidadConvocante: event.target.value, }))} />
               </th>
               <th rowSpan={2}>Horario de Atención de la Entidad</th>
               <th>
-                <input type="time" required value={form.horarioAtencion} onChange={(event) => setForm((old) => ({ ...old, horarioAtencion: event.target.value, }))}/>
+                <input type="time" required value={form.horarioAtencion} onChange={(event) => setForm((old) => ({ ...old, horarioAtencion: event.target.value, }))} />
               </th>
             </tr>
             <tr>
               <th>
-                <input type="time" required value={form.horarioAtencionDos} onChange={(event) => setForm((old) => ({ ...old, horarioAtencionDos: event.target.value, }))}/>
+                <input type="time" required value={form.horarioAtencionDos} onChange={(event) => setForm((old) => ({ ...old, horarioAtencionDos: event.target.value, }))} />
               </th>
             </tr>
             <th rowSpan={3} colSpan={2}>
@@ -297,13 +298,13 @@ const Uno = () => {
             </tr>
             <tr>
               <th colSpan={3}>
-                <input type="text" required value={form.nombreCompleto} onChange={(event) => setForm((old) => ({ ...old, nombreCompleto: event.target.value, }))}/>
+                <input type="text" required value={form.nombreCompleto} onChange={(event) => setForm((old) => ({ ...old, nombreCompleto: event.target.value, }))} />
               </th>
               <th>
-                <input type="text" required value={form.cargo} onChange={(event) => setForm((old) => ({ ...old, cargo: event.target.value, }))}/>
+                <input type="text" required value={form.cargo} onChange={(event) => setForm((old) => ({ ...old, cargo: event.target.value, }))} />
               </th>
               <th>
-                <input type="text" required value={form.dependencia} onChange={(event) => setForm((old) => ({ ...old, dependencia: event.target.value, }))}/>
+                <input type="text" required value={form.dependencia} onChange={(event) => setForm((old) => ({ ...old, dependencia: event.target.value, }))} />
               </th>
             </tr>
             <tr>
@@ -313,13 +314,13 @@ const Uno = () => {
             </tr>
             <tr>
               <th colSpan={2}>
-                <input type="number" required value={form.telefono} onChange={(event) => setForm((old) => ({ ...old, telefono: event.target.value, }))}/>
+                <input type="number" required value={form.telefono} onChange={(event) => setForm((old) => ({ ...old, telefono: event.target.value, }))} />
               </th>
               <th colSpan={2}>
-                <input type="number" required value={form.fax} onChange={(event) => setForm((old) => ({ ...old, fax: event.target.value, }))}/>
+                <input type="number" required value={form.fax} onChange={(event) => setForm((old) => ({ ...old, fax: event.target.value, }))} />
               </th>
               <th colSpan={3}>
-                <input type="email" required value={form.correoElectronico} onChange={(event) => setForm((old) => ({ ...old, correoElectronico: event.target.value, }))}/>
+                <input type="email" required value={form.correoElectronico} onChange={(event) => setForm((old) => ({ ...old, correoElectronico: event.target.value, }))} />
               </th>
             </tr>
           </tbody>
@@ -394,50 +395,50 @@ const Uno = () => {
                 Partes (*)
               </Th>
               <th>
-                <input type="date" required value={form.actividadUnoFecha} onChange={(event) => setForm((old) => ({ ...old, actividadUnoFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadUnoFecha} onChange={(event) => setForm((old) => ({ ...old, actividadUnoFecha: event.target.value, }))} />
               </th>
               <th></th>
               <th>
-                <input type="text" required value={form.actividadUnoLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadUnoLugarDireccion: event.target.value, }))}/>
+                <input type="text" required value={form.actividadUnoLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadUnoLugarDireccion: event.target.value, }))} />
               </th>
             </tr>
             <tr>
               <th>2</th>
               <Th>Inspección previa</Th>
               <th>
-                <input type="date" required value={form.actividadDosFecha} onChange={(event) => setForm((old) => ({ ...old, actividadDosFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadDosFecha} onChange={(event) => setForm((old) => ({ ...old, actividadDosFecha: event.target.value, }))} />
               </th>
               <th>
-                <input type="time" required value={form.actividadDosHora} onChange={(event) => setForm((old) => ({ ...old, actividadDosHora: event.target.value, }))}/>
+                <input type="time" required value={form.actividadDosHora} onChange={(event) => setForm((old) => ({ ...old, actividadDosHora: event.target.value, }))} />
               </th>
               <th>
-                <input type="text" required value={form.actividadDosLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadDosLugarDireccion: event.target.value, }))}/>
+                <input type="text" required value={form.actividadDosLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadDosLugarDireccion: event.target.value, }))} />
               </th>
             </tr>
             <tr>
               <th>3</th>
               <Th>Consultas Escritas (No es obligatoria)</Th>
               <th>
-                <input type="date" required value={form.actividadTresFecha} onChange={(event) => setForm((old) => ({ ...old, actividadTresFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadTresFecha} onChange={(event) => setForm((old) => ({ ...old, actividadTresFecha: event.target.value, }))} />
               </th>
               <th>
-                <input type="time" required value={form.actividadTresHora} onChange={(event) => setForm((old) => ({ ...old, actividadTresHora: event.target.value, }))}/>
+                <input type="time" required value={form.actividadTresHora} onChange={(event) => setForm((old) => ({ ...old, actividadTresHora: event.target.value, }))} />
               </th>
               <th>
-                <input type="text" required value={form.actividadTresLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadTresLugarDireccion: event.target.value, }))}/>
+                <input type="text" required value={form.actividadTresLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadTresLugarDireccion: event.target.value, }))} />
               </th>
             </tr>
             <tr>
               <th>4</th>
               <Th>Reunión Informativa de aclaración (No es obligatoria)</Th>
               <th>
-                <input type="date" required value={form.actividadCuatroFecha} onChange={(event) => setForm((old) => ({ ...old, actividadCuatroFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadCuatroFecha} onChange={(event) => setForm((old) => ({ ...old, actividadCuatroFecha: event.target.value, }))} />
               </th>
               <th>
-                <input type="time" required value={form.actividadCuatroHora} onChange={(event) => setForm((old) => ({ ...old, actividadCuatroHora: event.target.value, }))}/>
+                <input type="time" required value={form.actividadCuatroHora} onChange={(event) => setForm((old) => ({ ...old, actividadCuatroHora: event.target.value, }))} />
               </th>
               <th>
-                <input type="text" required value={form.actividadCuatroLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadCuatroLugarDireccion: event.target.value, }))}/>
+                <input type="text" required value={form.actividadCuatroLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadCuatroLugarDireccion: event.target.value, }))} />
               </th>
             </tr>
             <tr>
@@ -446,18 +447,18 @@ const Uno = () => {
                 Fecha límite de Presentación y Apertura de Propuestas
               </Th>
               <th rowSpan={2}>
-                <input type="date" required value={form.actividadCincooFecha} onChange={(event) => setForm((old) => ({ ...old, financiaactividadCincooFechamientoDos: event.target.value, }))}/>
+                <input type="date" required value={form.actividadCincooFecha} onChange={(event) => setForm((old) => ({ ...old, financiaactividadCincooFechamientoDos: event.target.value, }))} />
               </th>
               <th>
-                <input type="time" required value={form.actividadCincoHoraIni} onChange={(event) => setForm((old) => ({ ...old, actividadCincoHoraIni: event.target.value, }))}/>
+                <input type="time" required value={form.actividadCincoHoraIni} onChange={(event) => setForm((old) => ({ ...old, actividadCincoHoraIni: event.target.value, }))} />
               </th>
               <th rowSpan={2}>
-                <input type="text" required value={form.actividadCincroLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadCincroLugarDireccion: event.target.value, }))}/>
+                <input type="text" required value={form.actividadCincroLugarDireccion} onChange={(event) => setForm((old) => ({ ...old, actividadCincroLugarDireccion: event.target.value, }))} />
               </th>
             </tr>
             <tr>
               <th>
-                <input type="time" required value={form.actividadCincoHoraFin} onChange={(event) => setForm((old) => ({ ...old, actividadCincoHoraFin: event.target.value, }))}/>
+                <input type="time" required value={form.actividadCincoHoraFin} onChange={(event) => setForm((old) => ({ ...old, actividadCincoHoraFin: event.target.value, }))} />
               </th>
             </tr>
             <tr>
@@ -466,7 +467,7 @@ const Uno = () => {
                 Presentación del Informe de Evaluación y Recomendación al RPA
               </Th>
               <th>
-                <input type="date" required value={form.actividadSeisFecha} onChange={(event) => setForm((old) => ({ ...old, actividadSeisFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadSeisFecha} onChange={(event) => setForm((old) => ({ ...old, actividadSeisFecha: event.target.value, }))} />
               </th>
               <th></th>
               <th></th>
@@ -475,7 +476,7 @@ const Uno = () => {
               <th>7</th>
               <Th>Adjudicación o Declaratoria Desierta </Th>
               <th>
-                <input type="date" required value={form.actividadSieteFecha} onChange={(event) => setForm((old) => ({ ...old, actividadSieteFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadSieteFecha} onChange={(event) => setForm((old) => ({ ...old, actividadSieteFecha: event.target.value, }))} />
               </th>
               <th></th>
               <th></th>
@@ -487,7 +488,7 @@ const Uno = () => {
                 límite)
               </Th>
               <th>
-                <input type="date" required value={form.actividadOchoFecha} onChange={(event) => setForm((old) => ({ ...old, actividadOchoFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadOchoFecha} onChange={(event) => setForm((old) => ({ ...old, actividadOchoFecha: event.target.value, }))} />
               </th>
               <th></th>
               <th></th>
@@ -499,7 +500,7 @@ const Uno = () => {
                 contratación.
               </Th>
               <th>
-                <input type="date" required value={form.actividadNueveFecha} onChange={(event) => setForm((old) => ({ ...old, actividadNueveFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadNueveFecha} onChange={(event) => setForm((old) => ({ ...old, actividadNueveFecha: event.target.value, }))} />
               </th>
               <th></th>
               <th></th>
@@ -508,7 +509,7 @@ const Uno = () => {
               <th>10</th>
               <Th>Suscripción de contrato.</Th>
               <th>
-                <input type="date" required value={form.actividadDiezFecha} onChange={(event) => setForm((old) => ({ ...old, actividadDiezFecha: event.target.value, }))}/>
+                <input type="date" required value={form.actividadDiezFecha} onChange={(event) => setForm((old) => ({ ...old, actividadDiezFecha: event.target.value, }))} />
               </th>
               <th></th>
               <th></th>
@@ -519,7 +520,7 @@ const Uno = () => {
           <label></label>
         </Titulo2>
         <DivButton>
-        <ButtonSig onClick={handleSubmit}><Link to="/uno">ENVIAR</Link></ButtonSig>
+          <ButtonSig onClick={handleSubmit}><Link to="/dashboard/convocatorias">ENVIAR</Link></ButtonSig>
         </DivButton>
       </Form>
     </ContainerForm>

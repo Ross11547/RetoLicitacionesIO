@@ -473,7 +473,7 @@ const Uno = () => {
         </Titulo2>
         <DivButton>
           <ButtonSig onClick={handleFormUno}>
-            <Link to="/dashboard/convocatorias">Llenar convocatoria</Link>
+            <Link to="/dasboard/llenarConvo">Llenar convocatoria</Link>
           </ButtonSig>
         </DivButton>
       </Form>

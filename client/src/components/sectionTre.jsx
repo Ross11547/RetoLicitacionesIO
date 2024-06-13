@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Colors } from "../style/colores";
-import { ButtonD, Cuce, Form1, Table, Titulo, Titulo2, Titulo3 } from "../style/formulariosStyleUno";
+import { ButtonD, Cuce, Form1, Table, Th, Titulo, Titulo2, Titulo3 } from "../style/formulariosStyleUno";
 import { InputD } from "../style/formulariosStyleDosTres";
 import { Link } from "react-router-dom";
+import { useGetDelete } from "../hooks/useGetDelete";
+import { ENDPOINTS } from "../routes/enpoints";
+import { convertirFecha } from "../utils/dateformat";
 
 const Card = styled.div`
   border-radius: 30px;
@@ -54,6 +57,7 @@ const ContainerForm = styled.div`
 `;
 
 const SectionTwo = () => {
+  const { res } = useGetDelete(ENDPOINTS.PROYECTO.GET);
   return (
     <>
       <Container className="container py-5">
@@ -73,30 +77,25 @@ const SectionTwo = () => {
                   <Scroll>
                     <thead>
                       <tr>
-                        <th >DEPARTAMENTO / ENTIDAD / CUCE</th>
-                        <th >ONJETO / TIPO DE CONTRATACIÓN / MODALIDAD</th>
+                        <th >N°</th>
+                        <th >DEPARTAMENTO</th>
+                        <th >OBJETO / TIPO DE CONTRATACIÓN / MODALIDAD</th>
                         <th >ESTADO / FECHA</th>
-                        <th >CONTACTO</th>
                         <th ><ImgOjo src="https://cdn.icon-icons.com/icons2/2483/PNG/512/eye_icon_149935.png" alt="" /></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th>Cochabamba</th>
-                        <th rowSpan={3}>Const. tinglado cancha polifuncional mzn 010 cinti raymi otb santa monica de Obras - ANPP</th>
-                        <th>Vigente</th>
-                        <th rowSpan={3}>Mariely Claudia Aguayo Taborga (Telf: 4258103- 4425810-4258030)</th>
-                        <th rowSpan={3}><ButtonD>DETALLES</ButtonD></th>
-                      </tr>
-                      <tr>
-                        <th>Gobierno Autonomo Municipal De Cochabamba</th>
-                        <th>Publicación: 24 / 04 / 2024</th>
-                      </tr>
-                      <tr>
-                        <th>24-1301-00-1416026-2-2</th>
-                        <th>Presentación: 08 / 05 / 2024</th>
-                      </tr>                      
+                      {res?.data?.map((v, i) => (
+                        <tr key={i}>
+                          <th>{i + 1}</th>
+                          <th>{v.departamento}</th>
+                          <th>{v.nombre}</th>
+                          <th>{convertirFecha(v.fechaPublicacion)}</th>
+                          <th>{convertirFecha(v.fechaPresentacion)}</th>
+                        </tr>
+                      ))}
                     </tbody>
+                    <th ><ButtonD><Link to="/detalles">DETALLES</Link></ButtonD></th>
                   </Scroll>
                 </Table>
                 <Titulo2>

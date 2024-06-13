@@ -26,7 +26,7 @@ export const Form = styled.form`
   height: 649px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.221);
-  background: rgba(89, 89, 89, 0.123);
+  backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
   align-items: center;
