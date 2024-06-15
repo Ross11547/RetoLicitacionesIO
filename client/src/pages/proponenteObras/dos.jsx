@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 
-const Dos = ({ setStep, cuce }) => {
+const Dos = ({cuce,setStep}) => {
   const [form, setForm] = useState({
     cuce: cuce,
     objetoContratacion: "",
@@ -162,7 +162,7 @@ const Dos = ({ setStep, cuce }) => {
           <label></label>
         </Titulo2>
         <DivButton>
-          <ButtonSig onClick={() => setStep(3)}>Siguiente</ButtonSig>
+          <ButtonSig onClick={()=>setStep(3)}>Siguiente</ButtonSig>
         </DivButton>
       </Form>
     </ContainerForm>

@@ -9,6 +9,7 @@ import {
   Section,
   SectionTwo,
   TableContainer,
+  ThAccion,
   Titulo,
 } from "../../style/estilosAdm";
 import { useGetDelete } from "../../hooks/useGetDelete";
@@ -29,6 +30,7 @@ const Convocatoria = () => {
     fechaPublicacion: "",
   });
   const { formUno, deleteUno } = useFormUno();
+  console.log(formUno);
   const [editMode, setEditMode] = useState(false);
   const [editId, setEditId] = useState(null);
   const handleSubmit = async (e) => {
@@ -224,11 +226,20 @@ const Convocatoria = () => {
                     <th>{v.departamento}</th>
                     <th>{v.modalidad}</th>
                     <th>{convertirFecha(v.fechaPublicacion)}</th>
-                    <th>
+                    <ThAccion>
+                      <Th>
                       <button onClick={() => handleDeletes(v.id)}>
                         Eliminar
                       </button>
-                    </th>
+                      </Th>
+                    </ThAccion>
+                    <ThAccion>
+                      <Th>
+                      <button>
+                        Calificar
+                      </button>
+                      </Th>
+                    </ThAccion>
                   </tr>
                 ))}
               </tbody>

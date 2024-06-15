@@ -1,21 +1,6 @@
 import React, { useState } from "react";
-import {
-  ButtonSig,
-  ContainerForm,
-  DivButton,
-  Table,
-  Th,
-} from "../style/formulariosStyleUno";
-import {
-  Form,
-  Titulo,
-  Titulo2,
-  FormGroup,
-  Cuce,
-  InputD,
-} from "../style/formulariosStyleDosTres";
-import { Link } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
+import { ButtonSig, ContainerForm, DivButton } from "../style/formulariosStyleUno";
+import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD } from "../style/formulariosStyleDosTres";
 import { toast } from "react-toastify";
 import Dos from "./proponenteObras/dos";
 import Tres from "./proponenteObras/tres";
@@ -24,6 +9,8 @@ import Cinco from "./proponenteObras/cinco";
 import Seis from "./proponenteObras/seis";
 import Siete from "./proponenteObras/siete";
 import { useUser } from "../store/user";
+import { v4 as uuidv4 } from "uuid";
+
 
 const Proyecto = ({ idConvocatoria }) => {
   const { user } = useUser();
@@ -32,8 +19,8 @@ const Proyecto = ({ idConvocatoria }) => {
     cuce: uuidv4(),
     entidad: "",
     departamento: "",
-    contacto: 0,
-    telefono: 0,
+    contacto: "",
+    telefono: "",
     tipoContratacion: "",
     modalidad: "",
   });
@@ -45,10 +32,17 @@ const Proyecto = ({ idConvocatoria }) => {
     const opciones = { year: "numeric", month: "long", day: "numeric" };
     return hoy.toLocaleDateString("es-ES", opciones);
   };
-  console.log(form);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleNext = () => {
+    if (form.nombre === "" || form.entidad === "" || form.departamento === "" || form.contacto === null || form.telefono === null || form.tipoContratacion === "" || form.modalidad === "")
+    {
+      toast.error(json.errorMessag);
+    } else {
+      setStep(step + 1);
+    }
+  };
+
+  const handleSubmit = async () => {
     try {
       const response = await fetch("http://localhost:5000/proyecto", {
         method: "POST",
@@ -58,17 +52,10 @@ const Proyecto = ({ idConvocatoria }) => {
         body: JSON.stringify({
           idUsuario: user.id,
           idConvocatoria: idConvocatoria,
-          nombre: form.nombre,
-          cuce: form.cuce,
+          ...form,
           estado: "En proceso",
-          entidad: form.entidad,
-          departamento: form.departamento,
           fechaPublicacion: obtenerFechaActual(),
           fechaPresentacion: obtenerFechaActual(),
-          contacto: form.contacto,
-          telefono: form.telefono,
-          tipoContratacion: form.tipoContratacion,
-          modalidad: form.modalidad,
         }),
       });
       if (!response.ok) {
@@ -76,6 +63,7 @@ const Proyecto = ({ idConvocatoria }) => {
       }
       toast.success("Proyecto enviado correctamente");
       const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -88,10 +76,7 @@ const Proyecto = ({ idConvocatoria }) => {
           <ContainerForm>
             <Form>
               <Titulo>
-                <label>
-                  REGISTRO DE LICITACIÓN PARA POSTULARSE A CONVOCATORIA
-                </label>
-                <label>(Por favor llene todos los campos)</label>
+                <label>REGISTRO DE PROYECTO PARA POSTULARSE A CONVOCATORIA</label>
               </Titulo>
               <Titulo2>
                 <label>1. DATOS DEL OBJETO DE LA CONTRATACIÓN</label>
@@ -152,7 +137,7 @@ const Proyecto = ({ idConvocatoria }) => {
                       }
                     />
                     <InputD
-                      type="text"
+                      type="number"
                       required
                       value={form.contacto}
                       onChange={(event) =>
@@ -199,25 +184,25 @@ const Proyecto = ({ idConvocatoria }) => {
                 </Cuce>
               </FormGroup>
               <DivButton>
-                <ButtonSig onClick={() => setStep(2)}>SIGUIENTE</ButtonSig>
+                <ButtonSig onClick={handleNext}>SIGUIENTE</ButtonSig>
               </DivButton>
             </Form>
           </ContainerForm>
         );
       case 2:
-        return <Dos setStep={setStep} cuce={form.cuce} />;
+        return <Dos setStep={setStep}/>;
       case 3:
-        return <Tres setStep={setStep} />;
+        return <Tres setStep={setStep}/>;
       case 4:
-        return <Cuatro setStep={setStep} />;
+        return <Cuatro  setStep={setStep}/>;
       case 5:
-        return <Cinco setStep={setStep} />;
+        return <Cinco  setStep={setStep}/>;
       case 6:
-        return <Seis setStep={setStep} />;
+        return <Seis  setStep={setStep}/>;
       case 7:
-        return <Siete setStefp={setStep} />;
+        return <Siete setStep={setStep} handleSubmit={handleSubmit} />;
       default:
-        return null;
+        return <div>Error: Paso desconocido</div>;
     }
   };
 

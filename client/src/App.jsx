@@ -33,6 +33,7 @@ import InicioSesion from "./pages/inicioSesion";
 import { ToastContainer } from "react-toastify";
 import { ModalContextProvider } from "./context/modalContext";
 import Modal from "./modal";
+import MenuForms from "./pages/menuForms"
 function App() {
   return (
     <BrowserRouter>
@@ -55,8 +56,9 @@ function App() {
             <Route path="/" element={<SectionTwo />} />
             <Route path="/acercaNosotros" element={<Acercanosotros />} />
             <Route path="/convocatoriasMenu" element={<MenuConvo />} />
-            <Route path="/postular" element={<Proyecto />} />
-            <Route path="/siguiente" element={<Dos />} />
+            <Route path="/postular" element={< MenuForms/>} />
+            <Route path="/footNosotros" element={<Acercanosotros />} />
+            <Route path="/siguientepro" element={<Dos />} />
 
             <Route path="/siguiente3" element={<Tres />} />
             <Route path="/siguiente4" element={<Cuatro />} />

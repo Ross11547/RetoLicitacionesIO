@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Tr, Table, Th } from "../../style/formulariosStyleUno";
+import { Tr, Table, Th, TableAdm } from "../../style/formulariosStyleUno";
 import {
   Container,
   FormAdm2,
   Link,
   TableContainer,
+  ThAccion,
   Titulo2,
 } from "../../style/estilosAdm";
 import { useGetDelete } from "../../hooks/useGetDelete";
@@ -127,7 +128,7 @@ const EmpresasAdj = () => {
           </div>
         </Titulo2>
         <TableContainer>
-          <Table>
+          <TableAdm>
             <thead>
               <Tr>
                 <th>Nombre</th>
@@ -154,15 +155,17 @@ const EmpresasAdj = () => {
                       : "No hay puntaje"}
                   </th>
                   <th>{v.estado}</th>
-                  <th>
+                  <ThAccion>
+                      <Th>
                     <button type="button" onClick={() => openModal(v)}>
                       Ver
                     </button>
-                  </th>
+                      </Th>
+                    </ThAccion>
                 </tr>
               ))}
             </tbody>
-          </Table>
+          </TableAdm>
         </TableContainer>
       </FormAdm2>
 

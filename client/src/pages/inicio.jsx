@@ -5,6 +5,7 @@ import Obras from "../assets/Obras.png";
 import Servicios from "../assets/Servicios.png";
 import SectionTre from "../components/sectionTre";
 import SectionTwo from "../components/sectionTwo";
+import SectionFour from "../components/sectionFour";
 import { Colors } from "../style/colores";
 import Foot from "./admin/foot";
 import { ENDPOINTS } from "../routes/enpoints";
@@ -67,6 +68,7 @@ const Inicio = () => {
       </Container>
       <SectionTwo />
       <SectionTre />
+      <SectionFour/>
       <Foot />
     </>
   );

@@ -240,7 +240,7 @@ const MovingBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://cdn.corporate.walmart.com/3c/ba/b944cfac494b85660220911f1163/istock-6675793-large.jpg') repeat;
+  background: url('https://cdns3.eltiempo.es/eltiempo/blog/noticias/2019/03/11135102/cumulus_tipos-de-nubes.jpg') repeat;
   background-size:cover;
   animation: ${moveBackground} 80s linear infinite;
   z-index: -2;

@@ -4,17 +4,15 @@ import { Colors } from './colores';
 export const ContainerForm = styled.div`
     width: 100%;
     height: 100%;
-    padding-top: 70px;
     display: flex;
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    background: ${Colors.primary500};
 `;
 
 export const Titulo = styled.div`
     width: 100%;  
-    height: 130px;
+    height: 100%;
     margin-bottom: 5px;
     background:${Colors.primary100};
     display: flex;
@@ -153,7 +151,7 @@ export const ButtonSig = styled.button`
     `;
 
 export const Form1 = styled.form`
-    width: 97.5%;
+    width: 1160px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -202,7 +200,6 @@ export const ButtonD = styled.button`
     `;
 
 export const Table = styled.table`
-    width: 100%;
     background-color: ${Colors.primary400};
     padding: 20px;
     border-radius: 10px;
@@ -254,3 +251,34 @@ export const Th = styled.th`
             cursor: pointer;
         }
     `;
+
+export const TableAdm = styled.table`
+    width: 100%;
+    background-color: ${Colors.primary400};
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    th, td {
+        padding: 15px;
+        border-bottom: 1px solid ${Colors.primary100};
+        
+    }
+    thead{
+        background-color: ${Colors.primary100};
+        color:${Colors.primary500};
+        font-size: 15px;
+    }
+    tbody{
+        
+    }
+    input{
+        background: ${Colors.primary400};
+        border: none;
+        outline: none;
+        text-align:center;
+        width:90%;
+    }
+    `;
+

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { ButtonSig, ContainerForm, DivButton, Table, Th, Tr, Tra } from '../../style/formulariosStyleUno';
-import { Form, Titulo, Titulo2 } from '../../style/formulariosStyleDosTres';
+import { Form, FormCinco, Titulo, Titulo2 } from '../../style/formulariosStyleDosTres';
 import { toast } from "react-toastify";
 import { Link } from 'react-router-dom';
 
-const Cinco = ({ setStep }) => {
+const Cinco = () => {
     const [form, setForm] = useState({
         denominacionAsociacion: "",
         nombreAsociado: "",
@@ -60,7 +60,7 @@ const Cinco = ({ setStep }) => {
     };
     return (
         <ContainerForm>
-            <Form>
+            <FormCinco>
                 <Titulo>
                     <label>PFORMULARIO A-2c</label>
                     <label>IDENTIFICACIÓN DEL PROPONENTE</label>
@@ -200,9 +200,9 @@ const Cinco = ({ setStep }) => {
                     <label></label>
                 </Titulo2>
                 <DivButton>
-                <ButtonSig onClick={() => setStep(6)}>Siguiente</ButtonSig>
+                <ButtonSig>Siguiente</ButtonSig>
                 </DivButton>
-            </Form>
+            </FormCinco>
         </ContainerForm>
     )
 }

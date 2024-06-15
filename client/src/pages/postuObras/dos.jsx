@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { ButtonSig, ContainerForm, DivButton, Table, Th  } from '../../style/formulariosStyleUno';
-import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD} from '../../style/formulariosStyleDosTres';
+import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD, FormDos} from '../../style/formulariosStyleDosTres';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from "react-toastify";
 
-const Dos = () => {
+const Dos = ({setStep}) => {
     const [form, setForm] = useState({
         cuce: uuidv4(),
         objetoContratacion: "",
@@ -40,7 +40,7 @@ const Dos = () => {
       };
     return (
         <ContainerForm>
-            <Form>
+            <FormDos>
                 <Titulo>
                     <label>PARTE III</label>
                     <label>ANEXO 1</label>
@@ -88,9 +88,9 @@ const Dos = () => {
                     <label></label>
                 </Titulo2>
                 <DivButton>
-                    <ButtonSig onClick={handleSubmit}><Link to="/">ENVIAR</Link></ButtonSig>
+                    <ButtonSig onClick={() => setStep(3)}>Siguiente</ButtonSig>
                 </DivButton>
-            </Form>
+            </FormDos>
         </ContainerForm>
     )
 }

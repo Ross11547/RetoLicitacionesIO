@@ -23,7 +23,7 @@ export const DivImg = styled.div`
 
 export const Form = styled.form`
   width: 30%; 
-  height: 649px;
+  height: 650px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.221);
   backdrop-filter: blur(20px);
@@ -44,14 +44,14 @@ export const LoginForm = styled.form`
 
 export const LoginForm2 = styled.form`
   width: 480px; 
-  height: 600px; 
+  height: 650px; 
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 export const Title = styled.h2`
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: ${Colors.primary100};
   font-size: 29px;
   text-align: center;

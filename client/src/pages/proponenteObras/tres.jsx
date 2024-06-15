@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ButtonSig, ContainerForm, DivButton, Table, Th, Tra } from '../../style/formulariosStyleUno'
-import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD } from '../../style/formulariosStyleDosTres';
+import { Form, Titulo, Titulo2, FormGroup, Cuce, InputD, FormTres } from '../../style/formulariosStyleDosTres';
 import { Link } from 'react-router-dom';
 import { toast } from "react-toastify";
 
@@ -40,7 +40,7 @@ const Tres = ({setStep}) => {
     };
     return (
         <ContainerForm>
-            <Form>
+            <FormTres>
                 <Titulo>
                     <label>PFORMULARIO A-2a</label>
                     <label>IDENTIFICACIÓN DEL PROPONENTE</label>
@@ -92,7 +92,7 @@ const Tres = ({setStep}) => {
                 <DivButton>
                     <ButtonSig onClick={() => setStep(4)}>Siguiente</ButtonSig>
                 </DivButton>
-            </Form>
+            </FormTres>
         </ContainerForm>
     )
 }

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ButtonSig, ContainerForm, DivButton, Tr, Table, Th, Tra} from '../../style/formulariosStyleUno';
-import {Form, Titulo, Titulo2} from '../../style/formulariosStyleDosTres';
+import {Form, FormSiete, Titulo, Titulo2} from '../../style/formulariosStyleDosTres';
 import { toast } from "react-toastify";
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Siete = () => {
     const [form,setForm] = useState({
@@ -199,9 +201,15 @@ const Siete = () => {
             console.error("Error:", error);
         }
     };
+    const Navigate = useNavigate();
+    const handleCreado =  (e) => {
+        e.preventDefault();    
+        toast.success("Postulación Enviada Correctamente");
+        return Navigate("/obras");
+    };
     return (
         <ContainerForm>
-            <Form>
+            <FormSiete>
                 <Titulo>
                     <label>FORMULARIO B-1</label>
                     <label>PRESUPUESTO POR ÍTEMS Y GENERAL DE LA OBRA</label>
@@ -738,9 +746,9 @@ const Siete = () => {
                 <Titulo2>
                 </Titulo2>
                 <DivButton>
-                    <ButtonSig>Guardar todo</ButtonSig>
+                <ButtonSig onClick={handleCreado}>Guardar</ButtonSig>
                 </DivButton>
-            </Form>
+            </FormSiete>
         </ContainerForm>
     );
 }

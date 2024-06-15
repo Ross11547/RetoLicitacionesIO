@@ -1,5 +1,5 @@
 import React from "react";
-import { Tr, Table, Th } from "../../style/formulariosStyleUno";
+import { Tr, Table, Th, TableAdm } from "../../style/formulariosStyleUno";
 import {
   Container,
   FormAdm2,
@@ -72,7 +72,7 @@ const Licitantes = () => {
           </div>
         </Titulo2>
         <TableContainer>
-          <Table>
+          <TableAdm>
             <thead>
               <Tr>
                 <th>N°</th>
@@ -105,7 +105,7 @@ const Licitantes = () => {
                 </TableRow>
               ))}
             </tbody>
-          </Table>
+          </TableAdm>
         </TableContainer>
       </FormAdm2>
     </Container>

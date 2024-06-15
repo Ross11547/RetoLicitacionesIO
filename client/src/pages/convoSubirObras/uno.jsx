@@ -3,7 +3,7 @@ import { ButtonSig, ContainerForm, DivButton, Form, FormGroup, Table, TextoTres,
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from "react-toastify";
-
+import { useFormUno } from "../../store/formUno";
 const Uno = () => {
   const [form, setForm] = useState({
     //primera parte
@@ -62,7 +62,8 @@ const Uno = () => {
     actividadNueveFecha: "",
     actividadDiezFecha: "",
   });
-  console.log(form)
+  const {setFormUno}=useFormUno();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -82,7 +83,9 @@ const Uno = () => {
         throw new Error("Network response was not ok");
       }
       toast.success("Formulario Uno Enviado Correctamente");
-      const data = await response.json();
+     
+      setFormUno(form);
+      console.log(form);
     } catch (error) {
       console.error("Error:", error);
     }

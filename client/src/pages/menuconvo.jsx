@@ -3,8 +3,16 @@ import styled, { keyframes } from 'styled-components';
 import { Colors } from '../style/colores'
 import Foot from './admin/foot'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 const MenuConvo = () => {
+  const Control = true;
+  const handleControlClick = (e) => {
+    if (Control) {
+      e.preventDefault();
+      toast.warning("No disponible por ahora :c");
+    }
+  };
   return (
     <>
       <Container>
@@ -16,9 +24,9 @@ const MenuConvo = () => {
           <CardBody1>
             <Card1>
               <button><Link to="/obras">OBRAS</Link></button>
-              <button><Link to="/serviciosGene">SERVICIOS GENERALES</Link></button>
-              <button><Link to="/bienes">BIENES</Link></button>
-              <button><Link to="/serviciosConsul">SERVICIOS DE CONSULTORÍA</Link></button>
+              <button><Link onClick={handleControlClick}>SERVICIOS GENERALES</Link></button>
+              <button><Link onClick={handleControlClick}>BIENES</Link></button>
+              <button><Link onClick={handleControlClick}>SERVICIOS DE CONSULTORÍA</Link></button>
             </Card1>
           </CardBody1>
         </ContainerForm>
@@ -112,7 +120,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: url('https://cdn.corporate.walmart.com/3c/ba/b944cfac494b85660220911f1163/istock-6675793-large.jpg') repeat;
+background: url('https://rapidweblaunch.com/wp-content/uploads/2022/11/construction-website-examples.jpg') repeat;
 background-size:cover;
 animation: ${moveBackground} 80s linear infinite;
 z-index: -2;

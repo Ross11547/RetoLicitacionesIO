@@ -27,101 +27,133 @@ const SectionTwo = () => {
   `;
 
   const Text = styled.label`
+    font-size: 18px; 
     text-align: center;
-    color: #fff;
-    animation: ${isVisible ? appearFromBottom : "none"} 0.5s ease forwards;
+   color: ${Colors.primary500};
+    animation: ${isVisible ? appearFromBottom : "none"} 0.8s ease forwards;
   `;
+
   return (
     <Container>
-      <ImageWrapper>
-        <img src={Fonto} />
-        <button><Link to="/leerMas">LEER MÁS</Link></button>
-      </ImageWrapper>
-      <Containera>
-        <BackgroundImage src={Sobras} />
-        <Content onClick={handleContainerClick}>
-          <Label>Obras</Label>
-          <Texts>
-            El sector de Obras se centra en la planificación, diseño y
-            construcción de estructuras físicas.
-          </Texts>
-        </Content>
-      </Containera>
-      <Containera>
-        <BackgroundImage src={Sservicios} />
-        <Content1>
-          <Label className="label">Servicios Generales</Label>
-          <Texts>
-            El sector de Servicios se dedica a proporcionar una amplia gama de
-            servicios a clientes y empresas.
-          </Texts>
-        </Content1>
-      </Containera>
-      <Containera>
-        <BackgroundImage src={Sbienes} />
-        <Content2>
-          <Label className="label">Bienes</Label>
-          <Texts>
-            El sector de Bienes se centra en la producción y gestión de
-            recursos materiales tangibles.
-          </Texts>
-        </Content2>
-      </Containera>
-      <Containera>
-        <BackgroundImage src={Sconsultoria} />
-        <Content1>
-          <Label className="label">Servicios De Consultoria</Label>
-          <Texts>
-            El sector de Servicios se dedica a proporcionar una amplia gama de
-            servicios a clientes y empresas.
-          </Texts>
-        </Content1>
-      </Containera>
+      <GridContainer>
+        <GridItem>
+          <BackgroundImage src={Sobras} />
+          <Content onClick={handleContainerClick}>
+            <Label>Obras</Label>
+            <Text>
+              El sector de Obras se centra en la planificación, diseño y
+              construcción de estructuras físicas.
+            </Text>
+          </Content>
+        </GridItem>
+        <GridItem>
+          <BackgroundImage src={Sservicios} />
+          <Content>
+            <Label>Servicios Generales</Label>
+            <Text>
+              El sector de Servicios se dedica a proporcionar una amplia gama de
+              servicios a clientes y empresas.
+            </Text>
+          </Content>
+        </GridItem>
+        <GridItem>
+          <BackgroundImage src={Sbienes} />
+          <Content>
+            <Label>Bienes</Label>
+            <Text>
+              El sector de Bienes se centra en la producción y gestión de
+              recursos materiales tangibles.
+            </Text>
+          </Content>
+        </GridItem>
+        <GridItem>
+          <BackgroundImage src={Sconsultoria} />
+          <Content>
+            <Label>Servicios De Consultoría</Label>
+            <Text>
+              El sector de Servicios se dedica a proporcionar una amplia gama de
+              servicios a clientes y empresas.
+            </Text>
+          </Content>
+        </GridItem>
+        <ImageWrapper>
+          <ButtonContainer>
+            <StyledButton><Link to="/leerMas">LEER MÁS</Link></StyledButton>
+          </ButtonContainer>
+        </ImageWrapper>
+      </GridContainer>
     </Container>
   );
 };
 
 export default SectionTwo;
+
 const Container = styled.div`
   width: 100%;
-  height: 400px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding-top: 20px;
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
-  width: 600px;
+  width: 100%;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   & > img {
-    width: 600px;
-  }
-  & > button {
-    width: 200px;
-    height: 50px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 13px;
-    font-weight: bold;
-    background: ${Colors.primary200};
-    border-radius: 5px;
-    border: none;
-    color: ${Colors.primary500};
-    cursor: pointer;
-    a {
-      text-decoration: none;
-      color: ${Colors.primary500};
-    }
+    width: 1175px;
+    height: 00px;
+    border-radius: 15px;
   }
 `;
-const Containera = styled.div`
-  position: relative;
+
+const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: -20px;  // Adjust this value to control the button's vertical position
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+
+const StyledButton = styled.button`
   width: 200px;
-  height: 424px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  background: ${Colors.primary200};
+  border-radius: 5px;
+  border: none;
+  color: ${Colors.primary500};
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: ${Colors.primary500};
+  }
+`;
+
+const GridContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+`;
+
+const GridItem = styled.div`
+  position: relative;
+  width: 280px;  // Increased width
+  height: 300px;  // Increased height
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  
 `;
 
 const BackgroundImage = styled.img`
@@ -143,44 +175,16 @@ const Content = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
-
-`;
-const Content1 = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-`;
-const Content2 = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  text-align: center;
 `;
 
 const Label = styled.label`
-  text-align: center;
   color: #fff;
-  font-size: 30px;
+  font-size: 28px;  // Increased font size
   font-weight: bold;
+  margin-bottom: 10px;
 `;
 
-const Texts = styled.label`
-  color: #fff;
-  height: 100px;
-  text-align: left;
+const Text = styled.label`
+  // Increased font size
 `;

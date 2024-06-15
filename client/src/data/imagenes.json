@@ -1,0 +1,52 @@
+[
+    {
+        "nombre": "Cochabamba",
+        "url1": "https://a.travel-assets.com/findyours-php/viewfinder/images/res40/115000/115544-Cochabamba-And-Vicinity.jpg",
+        "url2": "https://media.istockphoto.com/id/1365455130/es/foto/14-de-septiembre-square-and-catedral-metropolitana-cochabamba-bolivia.jpg?s=612x612&w=0&k=20&c=gt1ADaYvUOJzFECKZ2fTqchqaSBJC0oF7ICERdGOHFg=" 
+    },
+    {
+        "nombre": "Oruro",
+        "url1": "https://unifranz.edu.bo/wp-content/uploads/2024/02/65111019_1745881018890847_7699430748750610432_n.jpeg",
+        "url2": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/20/82/87/carnaval-de-oruro.jpg?w=1000&h=1000&s=1" 
+    },
+    {
+        "nombre": "Pando",
+        "url1": "https://web.senado.gob.bo/sites/default/files/styles/img-standard__800x600_/public/pando_0.jpg?itok=2Uin7wcG",
+        "url2": "https://pando.gob.bo/wp-content/uploads/2023/03/3-cobija.jpg" 
+    },
+    {
+        "nombre": "Beni",
+        "url1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDAdeKARCtSBlUXcOyGIQC8vqsACBBr6NwQ&s",
+        "url2": "https://www.lostiempos.com/sites/default/files/media_imagen/2017/11/18/pag._2_beni-apg_4_copia.jpg" 
+    },
+    {
+        "nombre": "Santa Cruz",
+        "url1": "https://cdn.bolivia.com/sdi/2018/09/26/7-curiosidades-de-santa-cruz-673897.jpg",
+        "url2": "https://eldeber.com.bo/_next/image?url=https%3A%2F%2Farchive.eldeber.com.bo%2FFiles%2FSizes%2F2021%2F9%2F12%2Fsanta-cruz-es-el-departamento-que-ms-crece-y-la-ciudad-tiene-600_950284153_760x520.JPG&w=3840&q=75" 
+    },
+    {
+        "nombre": "Tarija",
+        "url1": "https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/vavqg3zbynb231htiyr6",
+        "url2": "https://www.bloomberglinea.com/resizer/FHDdnKM5iPSa84PW0wdfWHuYeUk=/arc-photo-bloomberglinea/arc2-prod/public/EU7WTCY5MNDG5G2HFMWRVXUD4I.jpg" 
+    },
+    {
+        "nombre": "La Paz",
+        "url1": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Edificios_de_la_ciudad_de_La_Paz_desde_Plaza_Murillo_2018.jpg/273px-Edificios_de_la_ciudad_de_La_Paz_desde_Plaza_Murillo_2018.jpg",
+        "url2": "https://media.istockphoto.com/id/186178572/es/foto/nevado-illimani-pico.jpg?s=612x612&w=0&k=20&c=5VpHlWrjiFdelwaASail9Tnpe8l9XrWTW5VuoMNf5XA=" 
+    },
+    {
+        "nombre": "Chuquisaca",
+        "url1": "https://embajadadebolivia.eu/wp-content/uploads/2022/08/sucre-bolivia-1.jpg",
+        "url2": "https://www.lostiempos.com/sites/default/files/media_imagen/2018/5/25/sucre.jpg" 
+    },
+    {
+        "nombre": "Potosi",
+        "url1": "https://abi.bo/images/Noticias/Economia/nov-22/000_POTOS.jpg",
+        "url2": "https://ilamdir.org/blobs/ilamdir/w300h300-cropped/328/2019/13/moneda-bo.jpg" 
+    },
+    {
+        "nombre": "Unifranz",
+        "url1": "https://www.lostiempos.com/sites/default/files/styles/noticia_detalle/public/media_imagen/2018/7/14/14_me_2_unifranz.jpg?itok=5VSv5E2z",
+        "url2": "https://www.boliviaentusmanos.com/amarillas1/businesscard/imagenes/unifranz5.jpg" 
+    }
+]

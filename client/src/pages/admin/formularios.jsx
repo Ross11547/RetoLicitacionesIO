@@ -9,7 +9,9 @@ const Formularios = () => {
       <SectionTitle1>Formularios</SectionTitle1>
       <div>
         <Section>
-          <SectionTitle>Convocatoria</SectionTitle>
+        <SectionTitle>
+            <Sectionh2>Convocatoria</Sectionh2>
+          </SectionTitle>
           <CardBody>
             {["Uno"].map((item, index) => (
               <ButtonWrapper key={index}>
@@ -19,7 +21,9 @@ const Formularios = () => {
           </CardBody>
         </Section>
         <Section>
-          <SectionTitle>Proponente</SectionTitle>
+          <SectionTitle>
+            <Sectionh2>Proponente</Sectionh2>
+          </SectionTitle>
           <CardBody>
             {["Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete"].map((item, index) => (
               <ButtonWrapper key={index}>
@@ -29,7 +33,9 @@ const Formularios = () => {
           </CardBody>
         </Section>
         <Section>
-          <SectionTitle>Evaluador</SectionTitle>
+          <SectionTitle>
+            <Sectionh2>Evaluador</Sectionh2>
+          </SectionTitle>
           <CardBody>
             {["Ocho", "Nueve", "Diez", "Once", "Doce", "Trece", "Catorce"].map((item, index) => (
               <ButtonWrapper key={index}>
@@ -63,19 +69,19 @@ const Container = styled.div`
 
 const Section = styled.div`
   width: 470px;
-  height:100%;
+  height:800px;
   margin-top:20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content:center;
   padding: 20px;
-  background: ${Colors.primary400};
+  background:${Colors.primary400};
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px 0px;
 `;
 
-const SectionTitle1 = styled.h2`
+const SectionTitle1 = styled.h1`
   width:100%;
   color: ${Colors.primary100};
   margin-bottom: 20px;
@@ -88,15 +94,23 @@ const SectionTitle1 = styled.h2`
 `;
 
 const SectionTitle = styled.h2`
-  width:100%;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
   color: ${Colors.primary100};
   margin-bottom: 10px;
   text-align: center;
+`;
+const Sectionh2 = styled.h2`
+  width: 100%;
+  font-size:30px;
   &::first-letter {
-          color: ${Colors.primary200};
-          font-size: 1.3em;
-          font-weight: 600;
-      }
+    color: ${Colors.primary200};
+    font-size: 35px;
+    font-weight: 600;
+  }
 `;
 
 const CardBody = styled.div`

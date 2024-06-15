@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Colors } from '../../style/colores';
-import Logos from '../../assets/klipartz.png'
-import { Link } from 'react-router-dom';
+import Logos from '../../assets/klipartz.png';
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -14,28 +14,30 @@ function Footer() {
           </LogoContainer>
           <LinksContainer>
             <LinksGroup>
-              <GroupTitle>About</GroupTitle>
-              <StyledLink to="#">Flowbite</StyledLink>
-              <StyledLink to="#">Tailwind CSS</StyledLink>
+              <GroupTitle>SOBRE</GroupTitle>
+              <StyledLink to="/footNosotros">NOSOTROS</StyledLink>
+              <StyledExternalLink href="https://www.infosiscon.com">INFOSISCON</StyledExternalLink>
+              <StyledExternalLink href="https://www.sicoes.gob.bo">SICOES</StyledExternalLink>
             </LinksGroup>
             <LinksGroup>
               <GroupTitle>Follow us</GroupTitle>
-              <StyledLink to="#">Github</StyledLink>
-              <StyledLink to="#">Discord</StyledLink>
-            </LinksGroup>
-            <LinksGroup>
-              <GroupTitle>Legal</GroupTitle>
-              <StyledLink to="#">Privacy Policy</StyledLink>
-              <StyledLink to="#">Terms & Conditions</StyledLink>
+              <StyledExternalLink href="https://wa.me/69713008 ">WHATSAPP</StyledExternalLink>
+              <StyledExternalLink href="https://www.facebook.com/infosiscon">FACEBOOK</StyledExternalLink>
             </LinksGroup>
           </LinksContainer>
         </FooterTop>
         <FooterBottom>
           <Copyright>&copy; 2024 LicitaFranz™</Copyright>
           <IconContainer>
-            <FacebookIcon />
-            <InstagramIcon />
-            <TwitterIcon />
+            <StyledExternalLink href="https://www.facebook.com/infosiscon">
+              <FacebookIcon />
+            </StyledExternalLink>
+            <StyledExternalLink href="https://www.instagram.com/YOUR_PAGE">
+              <InstagramIcon />
+            </StyledExternalLink>
+            <StyledExternalLink href="https://x.com/infosiscon">
+              <TwitterIcon />
+            </StyledExternalLink>
           </IconContainer>
         </FooterBottom>
       </FooterWrapper>
@@ -56,14 +58,13 @@ const InstagramIcon = (props) => (
     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </Icon>
 );
-
 const TwitterIcon = (props) => (
   <Icon {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </Icon>
 );
-
 export default Footer;
+
 const FooterContainer = styled.footer`
   background-color: ${Colors.primary500};
   padding: 1.5rem 0;
@@ -98,12 +99,11 @@ const LogoText = styled.span`
   font-weight: 600;
   margin-left: 0.5rem;
   color: ${Colors.primary100};
-  
 `;
 
 const LinksContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 `;
 
@@ -124,7 +124,14 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   &:hover {
     color: ${Colors.primary200};
+  }
+`;
 
+const StyledExternalLink = styled.a`
+  color: ${Colors.primary100};
+  text-decoration: none;
+  &:hover {
+    color: ${Colors.primary200};
   }
 `;
 
@@ -156,4 +163,3 @@ const Icon = styled.svg`
     color: ${Colors.primary200};
   }
 `;
-

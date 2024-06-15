@@ -74,7 +74,7 @@ export const TableContainer = styled.div`
   overflow-y: scroll;
   `;
   export const FormAdm2 = styled.form`
-    width: 80%;
+    width: 100%;
     padding: 30px;
     display: flex;
     flex-direction: column;

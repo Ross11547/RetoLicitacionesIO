@@ -93,7 +93,7 @@ const MovingBackground = styled.div`
   left: 0;
   width: 100%;
   height: 1400px;
-  background: url("https://vinccler.wordpress.com/wp-content/uploads/2020/10/vinccler-construccion-conjunto-de-tareas-y-objetivos-definidos.jpg")
+  background: url("https://72cf75f9f7.clvaw-cdnwnd.com/bda6742a4e78d889360304a280fac4d6/200000009-1a0741b01b/Fondo%201.jpg?ph=72cf75f9f7")
     repeat;
   background-size: cover;
   animation: ${moveBackground} 80s linear infinite;
@@ -101,7 +101,10 @@ const MovingBackground = styled.div`
 `;
 
 const Card = styled.div`
+  width: 1160px;
+  height: 1020px;
   border-radius: 30px;
+  margin-left: 100px;
   box-shadow: rgba(0, 0, 0, 0.499) 0px 2px 4px 0px;
   backdrop-filter: blur(20px);
 `;
@@ -109,7 +112,7 @@ const Card = styled.div`
 const CardBody = styled.div`
   width: 100%;
   height: 1070px;
-  margin-top: 15px;
+  margin-top: 30px;
 `;
 const Scroll = styled.div`
   width: 100%;
@@ -118,7 +121,6 @@ const Scroll = styled.div`
 `;
 const CardBody1 = styled.div`
   width: 100%;
-  background: ${Colors.primary100};
   box-shadow: rgba(0, 0, 0, 0.499) 0px 2px 4px 0px;
   border-radius: 5px;
 `;
@@ -133,15 +135,16 @@ const Card1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background:${Colors.primary100};
+  h1{
+      color:${Colors.primary500};
+  }
 `;
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 15px;
-  h1 {
-    color: ${Colors.primary500};
-  }
 `;
 const ContainerForm = styled.div`
   width: 1519px;

@@ -78,15 +78,6 @@ const InicioSesion = () => {
               required
             />
           </FormGroup>
-          <FormGroup>
-            <CheckboxContainer>
-              <div>
-                <CheckboxInput type="checkbox" required></CheckboxInput>
-                <CheckboxLabel htmlFor="check">Recordar</CheckboxLabel>
-              </div>
-              <a href="/">¿No recuerda su contraseña?</a>
-            </CheckboxContainer>
-          </FormGroup>
           <ButtonInicio onClick={handleLogin}>Iniciar sesión</ButtonInicio>
           <FormGroup>
             <Label htmlFor="register">

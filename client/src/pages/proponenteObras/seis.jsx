@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ButtonSig, ContainerForm, DivButton, Tr, Table, Th, Tra } from '../../style/formulariosStyleUno';
-import { Form, Titulo, Titulo2 } from '../../style/formulariosStyleDosTres';
+import { Form, FormSeis, Titulo, Titulo2 } from '../../style/formulariosStyleDosTres';
 import { toast } from "react-toastify";
 import { Link } from 'react-router-dom';
 
-const Seis = ({setStep}) => {
+const Seis = () => {
     const [form, setForm] = useState({
         denominacionAsociacion: "",
         nit: 0,
@@ -44,7 +44,7 @@ const Seis = ({setStep}) => {
 
     return (
         <ContainerForm>
-            <Form onSubmit={handleSubmit}>
+            <FormSeis onSubmit={handleSubmit}>
                 <Titulo>
                     <label>FORMULARIO A-2c</label>
                     <label>IDENTIFICACIÓN DE INTEGRANTES DE LA ASOCIACIÓN ACCIDENTAL</label>
@@ -176,9 +176,9 @@ const Seis = ({setStep}) => {
                     <label></label>
                 </Titulo2>
                 <DivButton>
-                <ButtonSig onClick={() => setStep(7)}>Siguiente</ButtonSig>
+                <ButtonSig>Siguiente</ButtonSig>
                 </DivButton>
-            </Form>
+            </FormSeis>
         </ContainerForm>
     )
 }
