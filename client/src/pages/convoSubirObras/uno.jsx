@@ -64,10 +64,8 @@ const Uno = () => {
   });
   const {setFormUno}=useFormUno();
   
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/formulario", {
+  const handleSubmit = async () => {
+/*       const response = await fetch("http://localhost:5000/formulario", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,14 +79,11 @@ const Uno = () => {
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
-      }
+      } */
       toast.success("Formulario Uno Enviado Correctamente");
-     
       setFormUno(form);
       console.log(form);
-    } catch (error) {
-      console.error("Error:", error);
-    }
+  
   };
   return (
     <ContainerForm>
@@ -450,7 +445,7 @@ const Uno = () => {
                 Fecha límite de Presentación y Apertura de Propuestas
               </Th>
               <th rowSpan={2}>
-                <input type="date" required value={form.actividadCincooFecha} onChange={(event) => setForm((old) => ({ ...old, financiaactividadCincooFechamientoDos: event.target.value, }))} />
+                <input type="date"  value={form.actividadCincooFecha} onChange={(event) => setForm((old) => ({ ...old, financiaactividadCincooFechamientoDos: event.target.value, }))} />
               </th>
               <th>
                 <input type="time" required value={form.actividadCincoHoraIni} onChange={(event) => setForm((old) => ({ ...old, actividadCincoHoraIni: event.target.value, }))} />
@@ -523,7 +518,7 @@ const Uno = () => {
           <label></label>
         </Titulo2>
         <DivButton>
-          <ButtonSig onClick={handleSubmit}><Link to="/dashboard/convocatorias">ENVIAR</Link></ButtonSig>
+          <ButtonSig onClick={handleSubmit}><Link to="/dashboard/convocatorias">ENVIAR</Link> </ButtonSig>
         </DivButton>
       </Form>
     </ContainerForm>

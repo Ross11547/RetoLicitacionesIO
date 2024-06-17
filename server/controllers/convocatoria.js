@@ -5,7 +5,11 @@ const prisma = new PrismaClient();
 
 app.get("/convocatoria", async (req, res) => {
   try {
-    const convocatoria = await prisma.convocatoria.findMany({});
+    const convocatoria = await prisma.convocatoria.findMany({
+      include: {
+        Proyecto: true
+      }
+    });
     res.json(convocatoria);
   } catch (error) {
     res.status(500).json({

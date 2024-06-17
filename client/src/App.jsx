@@ -34,6 +34,7 @@ import { ToastContainer } from "react-toastify";
 import { ModalContextProvider } from "./context/modalContext";
 import Modal from "./modal";
 import MenuForms from "./pages/menuForms"
+import Calificar from "./pages/admin/calificar";
 function App() {
   return (
     <BrowserRouter>
@@ -58,6 +59,7 @@ function App() {
             <Route path="/convocatoriasMenu" element={<MenuConvo />} />
             <Route path="/postular" element={< MenuForms/>} />
             <Route path="/footNosotros" element={<Acercanosotros />} />
+            <Route oath="calificar" element={Calificar}/>
             <Route path="/siguientepro" element={<Dos />} />
 
             <Route path="/siguiente3" element={<Tres />} />
@@ -81,8 +83,7 @@ function App() {
             <Route path="/dashboard/formularios" element={<Formularios />} />
             <Route path="/dashboard/convocatorias" element={<Convocatoria />} />
             <Route path="/dashboard/llenarConvo" element={<Uno />} />
-            <Route path="/dashboard/empresasAdj" element={<EmpresasAdj />} />
-            <Route path="/dashboard/proyectos" element={<Licitantes />} />
+            <Route path="/dashboard/calificacion" element={<Calificar />} />
             <Route path="/dashboard/AdmUno" element={<Uno />} />
             <Route path="/dashboard/AdmDos" element={<Dos />} />
             <Route path="/dashboard/AdmTres" element={<Tres />} />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tr, Table, Th, TableAdm } from "../../style/formulariosStyleUno";
+import { Tr, Table, Th, TableAdm } from "../../../style/formulariosStyleUno";
 import {
   Container,
   FormAdm2,
@@ -7,57 +7,24 @@ import {
   TableContainer,
   ThAccion,
   Titulo2,
-} from "../../style/estilosAdm";
-import { useGetDelete } from "../../hooks/useGetDelete";
-import { ENDPOINTS } from "../../routes/enpoints";
+} from "../../../style/estilosAdm";
+import { useGetDelete } from "../../../hooks/useGetDelete";
+import { ENDPOINTS } from "../../../routes/enpoints";
 import Modal from "react-modal";
 import styled from "styled-components";
-import { convertirFecha } from "../../utils/dateformat";
+import { convertirFecha } from "../../../utils/dateformat";
 import { toast } from "react-toastify";
-import PdfDocument from "../../components/pdf";
 import * as XLSX from "xlsx";
-import { saveAs } from "file-saver";
-import { PDFDownloadLink, pdf } from "@react-pdf/renderer";
+
 
 Modal.setAppElement("#root");
 
-const exportToExcel = (data) => {
-  const formattedData = data.map((v, i) => ({
-    N: i + 1,
-    "NOMBRE PROYECTO": v.nombre,
-    TELEFONO: v.telefono,
-    NIT: v.Usuario.empresa.nit,
-    DIRECCION: v.Usuario.empresa.direccion,
-    DESCRIPCION: v.Usuario.empresa.descripcion,
-    PUNTAJE: v.puntaje,
-
-  }));
-
-  const worksheet = XLSX.utils.json_to_sheet(formattedData);
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet, "Proyectos");
-  const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
-  const dataBlob = new Blob([excelBuffer], {
-    type: "application/octet-stream",
-  });
-  saveAs(dataBlob, "proyectos.xlsx");
-};
-
-const EmpresasAdj = () => {
+const CalificarEmpresa = ({ handleCambioCalificar }) => {
   const { handlePost, handleDelete, res, getData } =
     useGetDelete("proyectoEmpresa");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [puntaje, setPuntaje] = useState();
-  const handlePrintPdf = async (e) => {
-    e.preventDefault();
-    const blob = await pdf(<PdfDocument data={res?.data} />).toBlob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "proyectos.pdf";
-    a.click();
-  };
   const openModal = (project) => {
     setSelectedProject(project);
     setModalIsOpen(true);
@@ -73,8 +40,7 @@ const EmpresasAdj = () => {
   };
 
   const handlePuntajeSubmit = async (e, id) => {
-    e.preventDefault();
-    try {
+    /* e.preventDefault();
       const response = await fetch(`http://localhost:5000/empresaAdjudicada`, {
         method: "POST",
         headers: {
@@ -90,11 +56,9 @@ const EmpresasAdj = () => {
         throw new Error("Network response was not ok");
       }
       getData();
-      closeModal();
-      toast.success("Se creo el puntaje");
-    } catch (error) {
-      console.error("Error:", error);
-    }
+      closeModal(); */
+    toast.success("Empresa calificada");
+
   };
   const handleEstadoSubmit = async (id) => {
     try {
@@ -120,13 +84,9 @@ const EmpresasAdj = () => {
   return (
     <Container>
       <FormAdm2>
-        <Titulo2>
-          <h1>Empresas Adjudicadas</h1>
-          <div>
-            <button onClick={() => exportToExcel(res?.data)}>Excel</button>
-            <button onClick={handlePrintPdf}>PDF</button>
-          </div>
-        </Titulo2>
+        <button type="button" onClick={handleCambioCalificar}>
+          Volver
+        </button>
         <TableContainer>
           <ScrollableTable>
             <TableAdm>
@@ -137,7 +97,6 @@ const EmpresasAdj = () => {
                   <th>NIT</th>
                   <th>Direccion</th>
                   <th>Descripción</th>
-                  <th>Puntaje</th>
                   <th>Estado</th>
                   <th>Accion</th>
                 </Tr>
@@ -150,11 +109,7 @@ const EmpresasAdj = () => {
                     <th>{v.Usuario.empresa.nit}</th>
                     <th>{v.Usuario.empresa.direccion}</th>
                     <th>{v.Usuario.empresa.descripcion}</th>
-                    <th>
-                      {v.EmpresaAdjudicada.length > 0
-                        ? v.EmpresaAdjudicada[0].puntaje
-                        : "No hay puntaje"}
-                    </th>
+
                     <th>{v.estado}</th>
                     <ThAccion>
                       <Th>
@@ -265,10 +220,10 @@ const EmpresasAdj = () => {
   );
 };
 
-export default EmpresasAdj;
+export default CalificarEmpresa;
 
 const ScrollableTable = styled.div`
-  max-height: 395px;
+  max-height: 490px;
   overflow-y: auto;
 `;
 

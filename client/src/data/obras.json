@@ -11,7 +11,8 @@
         "contacto": "Juan Perez",
         "telefono": "79730320",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la construcción de un sistema de agua potable en la comunidad de Potrero para mejorar el acceso al agua potable."
     },
     {
         "idObras": 2,
@@ -25,7 +26,8 @@
         "contacto": "Maria Garcia",
         "telefono": "79730321",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPP"
+        "modalidad": "ANPP",
+        "descripcion": "Proyecto para la ampliación de la red de alcantarillado en la zona norte, mejorando la infraestructura sanitaria de la región."
     },
     {
         "idObras": 3,
@@ -39,7 +41,8 @@
         "contacto": "Pedro Alvarez",
         "telefono": "79730322",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la construcción de una nueva escuela primaria en la comunidad X, proporcionando mejores instalaciones educativas."
     },
     {
         "idObras": 4,
@@ -53,7 +56,8 @@
         "contacto": "Laura Quispe",
         "telefono": "79730323",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto de reparación de la carretera principal en el sector sur, mejorando la accesibilidad y la seguridad vial."
     },
     {
         "idObras": 5,
@@ -67,7 +71,8 @@
         "contacto": "Carlos Lopez",
         "telefono": "79730324",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la construcción de un puente sobre el río Y, mejorando la conectividad y facilitando el transporte en la región."
     },
     {
         "idObras": 6,
@@ -81,7 +86,8 @@
         "contacto": "Ana Fernandez",
         "telefono": "79730325",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la renovación del parque central, incluyendo nuevas áreas recreativas y paisajísticas para el disfrute de la comunidad."
     },
     {
         "idObras": 7,
@@ -95,7 +101,8 @@
         "contacto": "Sofia Torres",
         "telefono": "79730326",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la construcción de un nuevo centro de salud, mejorando el acceso a los servicios de salud en la comunidad."
     },
     {
         "idObras": 8,
@@ -109,7 +116,8 @@
         "contacto": "Miguel Sanchez",
         "telefono": "79730327",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la instalación de alumbrado público en las avenidas principales, mejorando la seguridad y la visibilidad nocturna."
     },
     {
         "idObras": 9,
@@ -123,7 +131,8 @@
         "contacto": "Gabriela Gomez",
         "telefono": "79730328",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la construcción de un nuevo mercado municipal, proporcionando un espacio adecuado para el comercio local."
     },
     {
         "idObras": 10,
@@ -137,7 +146,8 @@
         "contacto": "Ricardo Perez",
         "telefono": "79730329",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la reparación de la red de gas domiciliario, asegurando un suministro continuo y seguro para los hogares."
     },
     {
         "idObras": 11,
@@ -151,6 +161,7 @@
         "contacto": "Elena Vargas",
         "telefono": "79730330",
         "tipoContratacion": "Obras",
-        "modalidad": "ANPE"
+        "modalidad": "ANPE",
+        "descripcion": "Proyecto para la construcción de una planta de tratamiento de aguas residuales, mejorando la gestión y el tratamiento de las aguas residuales."
     }
 ]

@@ -22,8 +22,7 @@ const Navar = () => {
           <NavLink to="empresas">Empresas</NavLink>
           <NavLink to="formularios">Formularios</NavLink>
           <NavLink to="convocatorias">Convocatorias</NavLink>
-          <NavLink to="empresasAdj">Empresas Adjudicadas</NavLink>
-          <NavLink to="proyectos">Proyectos</NavLink>
+          <NavLink to="calificacion">Calificaciones</NavLink>
         </NavLinks>
         <NavLinks>
           <NavLink to="/" onClick={handlerLogout}>

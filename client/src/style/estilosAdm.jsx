@@ -23,7 +23,7 @@ export const Titulo = styled.div`
     }
 `;
 export const Titulo2 = styled.div`
-    width:1470px;
+    width:1065px;
     height: 100px;
     display: flex;
     align-items:center;
@@ -67,17 +67,15 @@ export const Titulo2 = styled.div`
       }
     }
 `;
-
-export const TableContainer = styled.div`
-  width: 1470px;
-  height: 950px; 
-  overflow-y: scroll;
-  `;
-  export const FormAdm2 = styled.form`
+export const FormAdm2 = styled.form`
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
+`;
+export const TableContainer = styled.div`
+  width: 100%;
+  height: 100%; 
 `;
 
 export const FormAdm = styled.form`

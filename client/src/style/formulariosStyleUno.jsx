@@ -43,7 +43,7 @@ export const Titulo2 = styled.div`
         color: ${Colors.primary500};
     }
 `;
-export const Form = styled.form`
+export const Form = styled.div`
     width: 80%;
     padding: 30px;
     display: flex;

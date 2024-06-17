@@ -228,16 +228,9 @@ const Convocatoria = () => {
                     <th>{convertirFecha(v.fechaPublicacion)}</th>
                     <ThAccion>
                       <Th>
-                      <button onClick={() => handleDeletes(v.id)}>
-                        Eliminar
-                      </button>
-                      </Th>
-                    </ThAccion>
-                    <ThAccion>
-                      <Th>
-                      <button>
-                        Calificar
-                      </button>
+                        <button onClick={() => handleDeletes(v.id)}>
+                          Eliminar
+                        </button>
                       </Th>
                     </ThAccion>
                   </tr>

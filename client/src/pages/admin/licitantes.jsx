@@ -65,13 +65,14 @@ const Licitantes = () => {
     <Container>
       <FormAdm2>
         <Titulo2>
-          <h1>Proyectos</h1>
+          <h1>Calificados</h1>
           <div>
             <button onClick={() => exportToExcel(res?.data)}>Excel</button>
             <button onClick={handlePrintPdf}>PDF</button>
           </div>
         </Titulo2>
         <TableContainer>
+          <ScrollableTable>
           <TableAdm>
             <thead>
               <Tr>
@@ -106,6 +107,7 @@ const Licitantes = () => {
               ))}
             </tbody>
           </TableAdm>
+          </ScrollableTable>
         </TableContainer>
       </FormAdm2>
     </Container>
@@ -115,4 +117,9 @@ const Licitantes = () => {
 export default Licitantes;
 const TableRow = styled.tr`
   background-color: ${(props) => props.bgColor};
+`;
+
+const ScrollableTable = styled.div`
+  max-height: 395px;
+  overflow-y: auto;
 `;
